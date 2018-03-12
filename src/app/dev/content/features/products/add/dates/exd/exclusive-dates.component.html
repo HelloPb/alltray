@@ -1,0 +1,18 @@
+<div [formGroup]="formGroup">
+  <div formArrayName="exds">
+    <div class="row no-gutters" *ngFor="let exd of exds.controls; let i=index" [formGroupName]="i">
+      <div class="col-12">
+        <at-calendar [date]="exd.get('from')"></at-calendar>
+      </div>
+      <div class="col-12">
+        <at-calendar [date]="exd.get('to')"></at-calendar>
+      </div>
+      <div class="col-12 d-flex justify-content-between">
+        <span>{{exd.get('from').value}}</span><span>{{exd.get('to').value}}</span>
+      </div>
+      <div class="col-12">
+        <at-bh [bhs]="exclusiveDates[i].bhs"></at-bh>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+/* 
+    Responsive containers. Acts as a wraper to child element to control its size
+    Its used to meet the ux designs
+*/
+
+.atc-rc-filter {
+    width: 285px;
+    margin-right: 25px;
+}
+
+.atc-rc-add-item {
+    max-width: 500px;
+    width: 100%;
+    padding: 10px;
+}
+
+.atc-rc-card {
+    max-width: 320px;
+}

@@ -1,0 +1,25 @@
+<div class="row no-gutters atc-bh" *ngFor="let bh of bhs;" #expand="var" var="0">
+  <div class="col-12" *ngIf="expand.var==1"  (click)="expand.var=0">
+    <div class="row no-gutters">
+      <div class="col d-flex align-items-center">
+        <at-hour [hhmm]="bh.from"></at-hour>
+        <span style="font-size: 0.8rem">AM</span>
+      </div>
+      <div class="col d-flex align-items-center">
+        <at-hour [hhmm]="bh.to"></at-hour>
+        <span style="font-size: 0.8rem">AM</span>
+      </div>
+
+      <div class="col col-auto d-flex align-items-center">
+        <i class="fa fa-save mr-3 action up"></i>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 d-flex justify-content-between" *ngIf="expand.var==0" (click)="expand.var=1">
+ 
+    <span>{{bh.from.h}}:{{bh.from.v}} AM</span>
+
+    <span>{{bh.from.h}}:{{bh.from.v}} AM</span>
+
+  </div>
+</div>

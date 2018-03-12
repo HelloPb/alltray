@@ -1,0 +1,17 @@
+<at-items class="atc-items">
+  <div class="row no-gutters">
+    <div class="col-12 col-md-auto" *ngFor="let item of items" (click)="next(item.f2f_url)">
+      <at-card class="atc-card">
+        <at-card-header>
+          <span class="atc-fc-title">{{item.title}}</span>
+          <span class="atc-fc-note">({{item.social_rank}})</span>
+        </at-card-header>
+        <at-card-body>
+          <img src="https://picsum.photos/200/300/?random={{item.id}}" class="atc-cl-img">
+          <p>Idle, Vada, Dosa, Chapati, Chitranna</p>
+          <p class="atc-fc-note">Uppittu, Bonda, Chuteny, Palak Panner and more ...</p>
+        </at-card-body>
+      </at-card>
+    </div>
+  </div>
+</at-items>

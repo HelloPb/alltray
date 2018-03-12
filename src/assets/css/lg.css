@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    .container {
+        width: 100%;
+        max-width: 970px;
+        padding: 0px;
+    }
+
+    .atc-container {
+        max-width: 970px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,10 @@
+<form [formGroup]="formGroup" novalidate>
+  <div class="form-group">
+    <input type="text" class="form-control" id="itemName" aria-describedby="itemName" placeholder="Enter item name">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Describe your product here">
+  </div>
+  <button type="button" class="btn btn-outline-primary" (click)="cancel()">Cancel</button>
+  <button type="button" class="btn btn-outline-primary" (click)="next()">Next</button>
+</form>

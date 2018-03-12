@@ -1,0 +1,15 @@
+<form [formGroup]="formGroup">
+  <div class="d-flex align-items-center float-left">
+    <div class="atc-hour">
+      <i class="fa fa-angle-up d-block mx-auto" (click)="addHour(h.value)"></i>
+      <input formControlName="h" #h>
+      <i class="fa fa-angle-down d-block mx-auto" (click)="reduceHour(h.value)"></i>
+    </div>
+    <div>:</div>
+    <div class="atc-hour">
+      <i class="fa fa-angle-up d-block mx-auto" (click)="addMinute(m.value)"></i>
+      <input formControlName="m" #m>
+      <i class="fa fa-angle-down d-block mx-auto" (click)="reduceMinute(m.value)"></i>
+    </div>
+  </div>
+</form>

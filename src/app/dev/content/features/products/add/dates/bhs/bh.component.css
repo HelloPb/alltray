@@ -1,0 +1,17 @@
+.atc-bh {
+    font-size: 0.9rem;
+    max-width: 245px;
+}
+
+.atc-bh .action {
+    font-size: 1.5rem;
+    cursor: pointer; 
+}
+
+.atc-bh .action.up:hover {
+    color: #004085;
+}
+
+.atc-bh .action.down:hover {
+    color: #991a1a;
+}

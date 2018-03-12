@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+.atc-fc-title {
+    color: #007BC3;    
+}
+
+.atc-fc-note {
+    color: #00000054;
+}
+
+.atc-bg-primary {
+    background-color: #991a1a;
+}
+
+@media (max-width: 575.98px) {
+    .container { 
+        max-width: 100%;
+        padding: 0px;
+    }
+    .atc-container { 
+        width: 100%;
+    }
+}

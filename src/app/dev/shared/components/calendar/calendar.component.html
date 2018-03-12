@@ -1,0 +1,13 @@
+<form [formGroup]="formGroup">
+  <div class="row no-gutters">
+    <div class="col">
+      <input class="form-control" placeholder="DD-MM-YYYY" formControlName="date">
+    </div>
+    <div class="col col-auto">
+      <i class="fa fa-calendar" style="font-size:2.39rem; cursor: pointer;" (click)="d.toggle()"></i>
+    </div>
+  </div>
+</form>
+<div class="input-group">
+  <input type="hidden" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (ngModelChange)="selectedDate()">
+</div>
