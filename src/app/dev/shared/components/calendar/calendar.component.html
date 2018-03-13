@@ -1,13 +1,13 @@
-<form [formGroup]="formGroup">
-  <div class="row no-gutters">
+<div #toggle="var" var="">
+  <div class="row no-gutters position-relative">
     <div class="col">
-      <input class="form-control" placeholder="DD-MM-YYYY" formControlName="date">
+      <input class="form-control" placeholder="DD-MM-YYYY" [formControl]="date">
     </div>
     <div class="col col-auto">
-      <i class="fa fa-calendar" style="font-size:2.39rem; cursor: pointer;" (click)="d.toggle()"></i>
+      <i class="fa fa-calendar" style="font-size:2.39rem; cursor: pointer;" (click)="toggle.var=!toggle.var;"></i>
+    </div>
+    <div class="col-12 atc-calendar" [ngClass]="{'d-none': toggle.var==false}">
+      <ngb-datepicker #dp [(ngModel)]="model" (ngModelChange)="selectedDate();toggle.var = !toggle.var;"></ngb-datepicker>
     </div>
   </div>
-</form>
-<div class="input-group">
-  <input type="hidden" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (ngModelChange)="selectedDate()">
 </div>

@@ -8,10 +8,10 @@
     cursor: pointer; 
 }
 
-.atc-bh .action.up:hover {
+.atc-bh .action.on:hover {
     color: #004085;
 }
 
-.atc-bh .action.down:hover {
+.atc-bh .action.off:hover {
     color: #991a1a;
 }

@@ -1,25 +1,36 @@
 <div class="row no-gutters atc-bh" *ngFor="let bh of bhs;" #expand="var" var="0">
-  <div class="col-12" *ngIf="expand.var==1"  (click)="expand.var=0">
+  <div class="col-12" *ngIf="expand.var==1">
     <div class="row no-gutters">
-      <div class="col d-flex align-items-center">
+      <div class="col d-flex align-items-center mr-2">
         <at-hour [hhmm]="bh.from"></at-hour>
         <span style="font-size: 0.8rem">AM</span>
       </div>
-      <div class="col d-flex align-items-center">
+      <div class="col d-flex align-items-center mr-2">
         <at-hour [hhmm]="bh.to"></at-hour>
         <span style="font-size: 0.8rem">AM</span>
       </div>
 
       <div class="col col-auto d-flex align-items-center">
-        <i class="fa fa-save mr-3 action up"></i>
+        <i class="fa fa-check action on mr-3 " (click)="expand.var=0"></i>
       </div>
     </div>
   </div>
-  <div class="col-12 d-flex justify-content-between" *ngIf="expand.var==0" (click)="expand.var=1">
- 
-    <span>{{bh.from.h}}:{{bh.from.v}} AM</span>
+  <div class="col-12 d-flex align-content-centerr" *ngIf="expand.var==0">
+<div class="d-flex align-items-center">
+  
+  <i class="fa fa-trash action off mr-3"></i>
 
-    <span>{{bh.from.h}}:{{bh.from.v}} AM</span>
+  <span>{{bh.from.h}}:{{bh.from.m}} AM</span>
+  <span>-</span>
+  <span>{{bh.to.h}}:{{bh.to.m}} AM</span>
+
+  <i class="fa fa-edit action on ml-3" (click)="expand.var=1"></i>
+</div>
+
+  </div>
+  <div class="col-12 d-flex justify-content-center" *ngIf="expand.var==0">
+
+    <i class="fa fa-plus action off mr-3"></i>
 
   </div>
 </div>

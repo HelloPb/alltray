@@ -19,4 +19,4 @@ class VarDirective {
   declarations: [VarDirective],
   exports: [VarDirective]
 })
-export class AtDirectivesModule { }
+export class AtVarDirectivesModule { }

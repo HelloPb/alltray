@@ -12,22 +12,25 @@
                 <at-calendar [date]="date.get('to')"></at-calendar>
             </div>
 
+
+            
+            <div style="height: 1rem">&nbsp;</div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="byWeekDays">
                 <label class="form-check-label" for="byWeekDays">
                     By week days
                 </label>
             </div>
-
             <at-week-days [weekDays]="item.dates[i].weekDays"></at-week-days>
 
+
+            <div style="height: 2rem">&nbsp;</div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="byDates">
                 <label class="form-check-label" for="byDates">
                     By exclusive dates
                 </label>
             </div>
-
             <at-exclusive-dates [exclusiveDates]="item.dates[i].exclusiveDates"></at-exclusive-dates>
 
         </div>

@@ -6,6 +6,8 @@
     font-size: 1.875rem; 
     text-align: center;
     background-color:#e2e2e2;
+    
+    color:gray;
 }
 
 .atc-hour> i:first-child { 
@@ -18,7 +20,9 @@
 
 .atc-hour > i:hover {
     background-color:#737373;
-    cursor: pointer;;
+    cursor: pointer;
+    
+    color:white;
 }
 
 .atc-hour > input {

@@ -1,18 +1,30 @@
 <div [formGroup]="formGroup">
   <div formArrayName="exds">
-    <div class="row no-gutters" *ngFor="let exd of exds.controls; let i=index" [formGroupName]="i">
-      <div class="col-12">
+    <div class="row no-gutters" *ngFor="let exd of exds.controls; let i=index" [formGroupName]="i" #edit="var" var="">
+
+
+      <div class="col-12" *ngIf="edit.var==true">
         <at-calendar [date]="exd.get('from')"></at-calendar>
       </div>
-      <div class="col-12">
+      <div class="col-12" *ngIf="edit.var==true">
         <at-calendar [date]="exd.get('to')"></at-calendar>
       </div>
-      <div class="col-12 d-flex justify-content-between">
-        <span>{{exd.get('from').value}}</span><span>{{exd.get('to').value}}</span>
+
+
+      <div class="col-12 atc-ex-days" *ngIf="edit.var!=true">
+        <i class="fa fa-trash action off mr-2"></i>
+        <span>{{exd.get('from').value}}</span>
+        <span class="mx-2"> - </span>
+        <span>{{exd.get('to').value}}</span>
+        <i class="fa fa-edit action on ml-2" (click)="expand.var=1"></i>
       </div>
-      <div class="col-12">
+
+
+      <div class="col-12 atc-ex-days flex-column">
+        <span>Open Hours</span>
         <at-bh [bhs]="exclusiveDates[i].bhs"></at-bh>
       </div>
+
     </div>
   </div>
 </div>

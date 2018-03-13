@@ -1,0 +1,6 @@
+.atc-calendar {
+    top: 100%;
+    background-color: white;
+    z-index: 1;
+    position: absolute;
+}

@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarModule } from '../../components/calendar/calendar.module';
 import { HourModule } from '../../components/hour/hour.module';
-import { AtDirectivesModule } from '../../directives/at-directives.module';
+import { AtVarDirectivesModule } from '../../directives/at-directives.module';
 
 @NgModule({
   exports: [
@@ -15,7 +15,7 @@ import { AtDirectivesModule } from '../../directives/at-directives.module';
     NgbModule,
     CalendarModule,
     HourModule,
-    AtDirectivesModule
+    AtVarDirectivesModule
   ]
 })
 export class SharedModule { }
