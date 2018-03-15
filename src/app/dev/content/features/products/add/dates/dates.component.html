@@ -1,42 +1,6 @@
-<form [formGroup]="formGroup" novalidate>
-
-    <div formArrayName="dates">
-
-        <div *ngFor="let date of dates.controls; let i=index" [formGroupName]="i">
-
-            <div class="form-group">
-                <at-calendar [date]="date.get('from')"></at-calendar>
-            </div>
-
-            <div class="form-group">
-                <at-calendar [date]="date.get('to')"></at-calendar>
-            </div>
-
-
-            
-            <div style="height: 1rem">&nbsp;</div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="byWeekDays">
-                <label class="form-check-label" for="byWeekDays">
-                    By week days
-                </label>
-            </div>
-            <at-week-days [weekDays]="item.dates[i].weekDays"></at-week-days>
-
-
-            <div style="height: 2rem">&nbsp;</div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="byDates">
-                <label class="form-check-label" for="byDates">
-                    By exclusive dates
-                </label>
-            </div>
-            <at-exclusive-dates [exclusiveDates]="item.dates[i].exclusiveDates"></at-exclusive-dates>
-
-        </div>
+<div class="row">
+    <div class="col-12" *ngFor="let date of item.dates; let i=index;" (click)="editDate(i)">
+        <span>{{date.from}}</span>
+        <span>{{date.to}}</span>
     </div>
-
-    <button type="button" class="btn btn-outline-primary" (click)="back()">back</button>
-    <button type="button" class="btn btn-outline-primary" (click)="next()">Next</button>
-
-</form>
+</div>

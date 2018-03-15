@@ -9,8 +9,8 @@ export class ItemActiveDate {
     weekDays: WeekDays;
     exclusiveDates: ExclusiveDate[];
     constructor() {
-        this.from = '';
-        this.to = '';
+        this.from = 'today';
+        this.to = 'tomorrow';
         this.byWeekDays = true;
         this.byDates = false;
         this.weekDays = new WeekDays();

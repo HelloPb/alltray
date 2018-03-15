@@ -14,6 +14,14 @@ export class BhComponent implements OnInit {
   constructor() {
   }
 
+  public addBh(): void {
+    this.bhs.push(new Bhs());
+  }
+
+  public deleteBh(index: number): void {
+    this.bhs.splice(index, 1)
+  }
+
   public ngOnInit(): void {
   }
 }

@@ -25,22 +25,21 @@ const routes: Routes = [
             path: '',
             component: ProductAddDatesComponent
           }
-          // ,
-          // {
-          //   path: 'date/:id',
-          //   resolve: { item: EditItemDateResolver },
-          //   children: [
-          //     {
-          //       path: 'exd/:id',
-          //       component: ExclusiveDatesComponent,
-          //       resolve: { item: EditItemDateExdResolver }
-          //     },
-          //     {
-          //       path: 'wds/:id',
-          //       component: WeekDaysComponent,
-          //       resolve: { item: EditItemDateWdsResolver },
-          //     }]
-          // }
+          ,
+          {
+            path: 'date',
+            loadChildren: 'app/dev/content/features/products/add/dates/date/date.module#ProductAddDateExModule'            // children: [
+            //   {
+            //     path: 'exd/:id',
+            //     component: ExclusiveDatesComponent,
+            //     resolve: { item: EditItemDateExdResolver }
+            //   },
+            //   {
+            //     path: 'wds/:id',
+            //     component: WeekDaysComponent,
+            //     resolve: { item: EditItemDateWdsResolver },
+            //   }]
+          }
         ]
       }]
   }

@@ -1,30 +1,25 @@
 <div [formGroup]="formGroup">
   <div formArrayName="exds">
-    <div class="row no-gutters" *ngFor="let exd of exds.controls; let i=index" [formGroupName]="i" #edit="var" var="">
-
-
-      <div class="col-12" *ngIf="edit.var==true">
+    <div class="row no-gutters" *ngFor="let exd of exds.controls; let i=index" [formGroupName]="i">
+      <div class="col-12 d-flex justify-content-end"> 
+        <button class="btn btn-link">delete</button>
+      </div>
+      <div class="col-12">
         <at-calendar [date]="exd.get('from')"></at-calendar>
       </div>
-      <div class="col-12" *ngIf="edit.var==true">
+      <div class="col-12">
         <at-calendar [date]="exd.get('to')"></at-calendar>
       </div>
-
-
-      <div class="col-12 atc-ex-days" *ngIf="edit.var!=true">
-        <i class="fa fa-trash action off mr-2"></i>
-        <span>{{exd.get('from').value}}</span>
-        <span class="mx-2"> - </span>
-        <span>{{exd.get('to').value}}</span>
-        <i class="fa fa-edit action on ml-2" (click)="expand.var=1"></i>
+      <div class="col-12 atc-exd">
+        <div class="atc-exd-item time flex-column">
+          <span>Open Hours</span>
+          <at-bh [bhs]="exclusiveDates[i].bhs"></at-bh>
+        </div>
       </div>
-
-
-      <div class="col-12 atc-ex-days flex-column">
-        <span>Open Hours</span>
-        <at-bh [bhs]="exclusiveDates[i].bhs"></at-bh>
-      </div>
-
     </div>
   </div>
+</div>
+<hr>
+<div class="d-flex justify-content-center">
+  <button class="btn btn-primary" (click)="addExd()">Add More Exclusive Dates</button>
 </div>

@@ -14,65 +14,15 @@ import { ItemActiveDate } from '../../../../../shared/models/item-active-date';
 export class ProductAddDatesComponent implements OnInit {
 
   private item: Item;
-  public formGroup: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
-    private formBuilder: FormBuilder) {
-    this.createForm();
+    private router: Router) {
   }
 
-  private createForm(): void {
-    this.formGroup = this.formBuilder.group({
-      dates: this.formBuilder.array([])
-    });
-  }
+  public editDate(index: string): void {
 
-  private updateForm(item: Item): void {
-    this.updateDatesForm(item.dates);
-  }
-
-  private updateDatesForm(dates: ItemActiveDate[]): void {
-
-    for (let i = 0; i < this.dates.length; i++) {
-      this.dates.removeAt(i);
-    }
-
-    dates.forEach(date => {
-      const formGroup = this.createDateForm();
-      this.updateDateForm(formGroup, date);
-      this.dates.push(formGroup);
-    });
-  }
-
-  private createDateForm(): FormGroup {
-
-    return this.formBuilder.group({
-      from: '',
-      to: '',
-      byWeekDays: true,
-      byDates: false
-    });
-  }
-
-  private updateDateForm(formGroup: FormGroup, date: ItemActiveDate): void {
-
-    formGroup.patchValue({
-      from: date.from,
-      to: date.to,
-      byWeekDays: date.byWeekDays,
-      byDates: date.byDates
-    });
-  }
-
-  get dates(): FormArray {
-    return this.formGroup.get('dates') as FormArray;
-  }
-
-  public editDate(dateIndex: string, exdDateIndex): void {
-
-    this.router.navigate([`/content/products/add/dates/${this.item.id}/date/${dateIndex}/exd/${exdDateIndex}`]);
+    this.router.navigate([`/content/products/add/dates/${this.item.id}/date/${index}`]);
 
   }
 
@@ -93,9 +43,11 @@ export class ProductAddDatesComponent implements OnInit {
   }
 
   public ngOnInit() {
+
     this.route.data.subscribe((data: { item: Item }) => {
       this.item = data.item;
-      this.updateForm(this.item);
+
     });
   }
+
 }

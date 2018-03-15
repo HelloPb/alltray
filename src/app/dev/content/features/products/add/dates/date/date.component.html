@@ -1,0 +1,30 @@
+<form [formGroup]="formGroup" novalidate>
+
+  <div class="form-group">
+    <at-calendar [date]="formGroup.get('from')"></at-calendar>
+  </div>
+
+  <div class="form-group">
+    <at-calendar [date]="formGroup.get('to')"></at-calendar>
+  </div>
+
+  <div style="height: 1rem">&nbsp;</div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" formControlName="byWeekDays">
+    <label class="form-check-label" for="byWeekDays">
+      By week days
+    </label>
+  </div>
+  <at-week-days [weekDays]="date.weekDays"></at-week-days>
+
+  <div style="height: 2rem">&nbsp;</div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" formControlName="byDates">
+    <label class="form-check-label" for="byDates">
+      By exclusive dates
+    </label>
+  </div>
+
+  <at-exclusive-dates [exclusiveDates]="date.exclusiveDates"></at-exclusive-dates>
+
+</form>

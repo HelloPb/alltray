@@ -1,8 +1,15 @@
-.atc-ex-days {
+.atc-exd { 
+    background-color: oldlace;
+    margin-bottom: 15px;
+}
+
+.atc-exd-item {
     display: flex; 
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
-    background-color: whitesmoke;
+}
+
+.atc-exd-item.time{ 
     border-radius: 10px;
+    padding: 20px 0px;
 }
