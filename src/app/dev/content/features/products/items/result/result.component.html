@@ -2,13 +2,13 @@
   <div class="col-12 col-md-6" *ngFor="let item of items" (click)="item.expand=!item.expand">
     <at-card class="atc-card" [ngClass]="{'min-max': item.expand==true}">
       <at-card-header>
-        <span class="atc-fc-title">{{item.title}}</span>
-        <span class="atc-fc-note">({{item.social_rank}})</span>
+        <span class="atc-title">{{item.title}}</span>
+        <span class="atc-dim-text">({{item.social_rank}})</span>
       </at-card-header>
       <at-card-body>
         <img src="https://picsum.photos/200/300/?random={{item.id}}" class="atc-cl-img">
         <p>Idle, Vada, Dosa, Chapati, Chitranna</p>
-        <p class="atc-fc-note">Uppittu, Bonda, Chuteny, Palak Panner and more ...</p>
+        <p class="atc-dim-text">Uppittu, Bonda, Chuteny, Palak Panner and more ...</p>
       </at-card-body>
     </at-card>
   </div>

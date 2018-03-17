@@ -3,14 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ProductSearchComponent } from './search.component';
 import { SharedModule } from '../../../../shared/modules/shared/shared.module';
 import { ProductSearchRoutingModule } from './search-routing.module';
-import { CardModule } from '../../../../shared/components/card/card.module';
 import { ProductSearchResultComponent } from './result/result.component';
 import { ProductSearchCriteriaModule } from '../shared/search-criteria/search-criteria.module';
 
 @NgModule({
   imports: [
     SharedModule,
-    CardModule,
     ProductSearchCriteriaModule
   ],
   declarations: [

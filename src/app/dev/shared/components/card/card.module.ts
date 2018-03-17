@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from './card.component';
 import { CardHeaderComponent } from './card-header/card-header.component';
 import { CardBodyComponent } from './card-body/card-body.component';
-import { CardCoverComponent } from './card-cover/card-cover.component';
 
 @NgModule({
   imports: [
@@ -12,14 +11,12 @@ import { CardCoverComponent } from './card-cover/card-cover.component';
   declarations: [
     CardComponent,
     CardHeaderComponent,
-    CardBodyComponent,
-    CardCoverComponent
+    CardBodyComponent
   ],
   exports: [
     CardComponent,
     CardHeaderComponent,
-    CardBodyComponent,
-    CardCoverComponent
+    CardBodyComponent
   ]
 
 })

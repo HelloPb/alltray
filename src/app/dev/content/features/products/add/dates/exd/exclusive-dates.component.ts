@@ -5,7 +5,7 @@ import { ExclusiveDate } from '../../../../../../shared/models/exclusive-date';
 @Component({
   selector: 'at-exclusive-dates',
   templateUrl: './exclusive-dates.component.html',
-  styleUrls: ['./exclusive-dates.component.css']
+  styleUrls: ['./exclusive-dates.component.scss']
 })
 export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit {
 
@@ -64,6 +64,11 @@ export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit
     const exd = new ExclusiveDate();
     this.exclusiveDates.push(exd);
     this.updateExd(exd);
+  }
+
+  public deleteExd(index: number): void {
+    this.exclusiveDates.splice(index, 1);
+    this.exds.removeAt(index);
   }
 
   public ngOnChanges(changes: SimpleChanges): void {

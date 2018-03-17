@@ -1,10 +1,13 @@
-/* Extra small devices (portrait phones, less than 576px) */
+@import './../root.scss';
+@import './../extend.scss';
+
 .atc-card {
     display: block;
     width: 100%;
-    padding-left: 0.9375rem;
-    padding-right: 0.9375rem;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: $default-color;
 }
 
 .atc-card p {
@@ -50,7 +53,7 @@
 /* range styles */
 @media (min-width: 768px) {
     .atc-card {
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.04);
+        @include at-box-shadow('card');
         margin-bottom: 0.625rem;
         margin-right: 0.625rem;
         padding-left: 0.625rem;

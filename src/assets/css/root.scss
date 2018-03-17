@@ -1,0 +1,55 @@
+$border-color:rgba(0, 0, 0, 0.1);
+$primary-color:#991a1a;
+$secondary-color:#007BC3;
+$third-color: whiteSmoke;
+$fourth-color:rgba(0, 0, 0, 0.54);
+$default-color: white;
+
+@mixin at-box-shadow($type: '') {
+    @if $type == 'card' {
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.04);
+    }
+}
+
+@mixin at-border($type: 'default') {
+    @if $type == 'default' {
+        border: 1px solid $border-color;
+        border-radius: 10px;
+    }
+}
+
+@mixin at-background($type: 0) {
+    @if $type == 0 { 
+        background-color: $default-color;
+    }    
+    @if $type == 1 { 
+        background-color: $primary-color;
+    }    
+    @if $type == 2 { 
+        background-color: $secondary-color;
+    }    
+    @if $type == 3 { 
+        background-color: $third-color;
+    }    
+    @if $type == 4 { 
+        background-color: $fourth-color;
+    }
+}
+
+@mixin at-color($type: 0) {
+    @if $type == 0 { 
+        color: $default-color;
+    }    
+    @if $type == 1 { 
+        color: $primary-color;
+    }    
+    @if $type == 2 { 
+        color: $secondary-color;
+    }   
+    @if $type == 3 { 
+        color: $third-color;
+    }   
+    @if $type == 4 { 
+        color: $fourth-color;
+    }
+}

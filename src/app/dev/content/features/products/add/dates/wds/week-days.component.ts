@@ -5,7 +5,7 @@ import { WeekDays } from '../../../../../../shared/models/week-days';
 @Component({
   selector: 'at-week-days',
   templateUrl: './week-days.component.html',
-  styleUrls: ['./week-days.component.css']
+  styleUrls: ['./week-days.component.scss']
 })
 export class WeekDaysComponent implements OnInit, AfterViewInit {
 

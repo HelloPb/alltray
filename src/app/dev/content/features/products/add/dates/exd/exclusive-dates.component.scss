@@ -1,0 +1,15 @@
+@import 'src/assets/css/root.scss';
+
+.atc-exd {
+    @include at-border();
+    @include at-background(3);
+    padding: 6px;
+    margin-bottom: 1rem; 
+}
+
+.atc-exd-item {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

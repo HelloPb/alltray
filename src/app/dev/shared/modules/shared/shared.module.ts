@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarModule } from '../../components/calendar/calendar.module';
 import { HourModule } from '../../components/hour/hour.module';
 import { AtVarDirectivesModule } from '../../directives/at-directives.module';
+import { CardModule } from '../../components/card/card.module';
 
 @NgModule({
   exports: [
@@ -15,7 +16,8 @@ import { AtVarDirectivesModule } from '../../directives/at-directives.module';
     NgbModule,
     CalendarModule,
     HourModule,
-    AtVarDirectivesModule
+    AtVarDirectivesModule,
+    CardModule
   ]
 })
 export class SharedModule { }

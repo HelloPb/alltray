@@ -1,0 +1,16 @@
+at-calendar ngb-datepicker {
+    width: 100%!important;
+}
+
+at-calendar .ngb-dp-day, at-calendar .ngb-dp-weekday, at-calendar .ngb-dp-week-number {
+    width: 100%!important;
+    height: 3rem!important;
+}
+
+at-calendar .ngb-dp-month { 
+    width: 100%!important;
+}
+
+at-calendar ngb-datepicker:focus {
+    outline: none!important;
+}

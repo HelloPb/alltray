@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+h1, h2, h3, h4, h5, h6, p, span, a, div, li, button, input, label {
+    font-family: 'Roboto', sans-serif;
+}
+
+@import "root";
+
+.atc-header {
+    @include at-background(1);    
+}
+
+.atc-title {
+    @include at-color(2);   
+}
+
+.atc-dim-text {
+    @include at-color(4);
+}
