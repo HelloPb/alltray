@@ -4,6 +4,8 @@ $secondary-color:#007BC3;
 $third-color: whiteSmoke;
 $fourth-color:rgba(0, 0, 0, 0.54);
 $default-color: white;
+$header-font-size: 0.9rem;
+$body-font-size: 0.875rem;
 
 @mixin at-box-shadow($type: '') {
     @if $type == 'card' {
@@ -52,4 +54,13 @@ $default-color: white;
     @if $type == 4 { 
         color: $fourth-color;
     }
+}
+
+@mixin at-font-size($type: 'body') {
+    @if $type == 'header' { 
+        font-size: $header-font-size;
+    }     
+    @if $type == 'body' { 
+        font-size: $body-font-size;
+    } 
 }

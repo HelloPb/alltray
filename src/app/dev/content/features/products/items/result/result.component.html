@@ -1,6 +1,6 @@
 <div class="row no-gutters">
   <div class="col-12 col-md-6" *ngFor="let item of items" (click)="item.expand=!item.expand">
-    <at-card class="atc-card" [ngClass]="{'min-max': item.expand==true}">
+    <at-card [ngClass]="{'min-max': item.expand==true}">
       <at-card-header>
         <span class="atc-title">{{item.title}}</span>
         <span class="atc-dim-text">({{item.social_rank}})</span>

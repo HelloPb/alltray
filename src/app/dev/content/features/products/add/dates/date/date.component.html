@@ -1,4 +1,4 @@
-<at-card class="atc-card pt-2">
+<at-card class="pt-2">
   <at-card-body>
     <form [formGroup]="formGroup" novalidate>
 
@@ -17,7 +17,7 @@
           By week days
         </label>
       </div>
-      <at-week-days [weekDays]="date.weekDays"></at-week-days>
+      <at-week-days [weekDays]="date?.weekDays"  [edit]="true"></at-week-days>
 
       <div style="height: 2rem">&nbsp;</div>
       <div class="form-check">
@@ -27,13 +27,12 @@
         </label>
       </div>
 
-      <at-exclusive-dates [exclusiveDates]="date.exclusiveDates"></at-exclusive-dates>
+      <at-exclusive-dates [exclusiveDates]="date?.exclusiveDates" [edit]="true"></at-exclusive-dates>
 
     </form>
   </at-card-body>
 </at-card>
 
 <div class="d-flex justify-content-center my-4">
-  <button type="button" class="btn btn-outline-warning mr-2" (click)="back()">Save</button>
-  <button type="button" class="btn btn-outline-primary" (click)="next()">Cancel</button>
+  <button type="button" class="btn btn-outline-warning mr-2" (click)="back()">Go Back</button>
 </div>

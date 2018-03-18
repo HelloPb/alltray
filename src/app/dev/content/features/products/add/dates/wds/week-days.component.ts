@@ -10,6 +10,7 @@ import { WeekDays } from '../../../../../../shared/models/week-days';
 export class WeekDaysComponent implements OnInit, AfterViewInit {
 
   @Input() weekDays: WeekDays;
+  @Input() edit = false;
 
   constructor() {
   }

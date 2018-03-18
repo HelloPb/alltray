@@ -3,10 +3,14 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../../../../shared/modules/shared/shared.module';
 import { ProductAddDatesRoutingModule } from './dates-routing.module'; 
 import { ProductAddDatesComponent } from './dates.component';
+import { WeekDaysModule } from './wds/week-days.module';
+import { ExclusiveDatesModule } from './exd/exclusive-dates.module';
 
 @NgModule({
   imports: [
-    SharedModule
+    SharedModule,
+    WeekDaysModule,
+    ExclusiveDatesModule
   ],
   declarations: [ProductAddDatesComponent]
 })

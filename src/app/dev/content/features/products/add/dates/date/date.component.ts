@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ItemActiveDate } from '../../../../../../shared/models/item-active-date';
+import { Item } from '../../../../../../shared/models/items';
 
 @Component({
   selector: 'at-date',
@@ -10,6 +11,7 @@ import { ItemActiveDate } from '../../../../../../shared/models/item-active-date
 })
 export class ProductAddDateComponent implements OnInit {
 
+  private id: string;
   private date: ItemActiveDate;
   public formGroup: FormGroup;
 
@@ -28,6 +30,7 @@ export class ProductAddDateComponent implements OnInit {
       byWeekDays: true,
       byDates: false
     });
+
   }
 
   private updateForm(date: ItemActiveDate): void {
@@ -38,25 +41,22 @@ export class ProductAddDateComponent implements OnInit {
       byWeekDays: date.byWeekDays,
       byDates: date.byDates
     });
-  }
-
-  public save(): void {
-
-    this.date = Object.assign(this.date, this.formGroup.value);
-    this.router.navigate([`/content/products/add/dates/0`]);
 
   }
 
   public back(): void {
 
-    this.router.navigate([`/content/products/add/stock/0`]);
+    this.router.navigate([`/content/products/add/dates/${this.id}`]);
 
   }
 
   public ngOnInit() {
-    this.route.data.subscribe((data: { date: ItemActiveDate }) => {
+
+    this.route.data.subscribe((data: { date: ItemActiveDate, item: Item }) => {
       this.date = data.date;
+      this.id = data.item.id;
       this.updateForm(this.date);
     });
+
   }
 }

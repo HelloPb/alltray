@@ -10,6 +10,7 @@ import { Bhs, HHMM } from '../../../../../../shared/models/bhs';
 export class BhComponent implements OnInit {
 
   @Input() bhs: Bhs[] = [];
+  @Input() edit = false;
 
   constructor() {
   }
@@ -19,7 +20,7 @@ export class BhComponent implements OnInit {
   }
 
   public deleteBh(index: number): void {
-    this.bhs.splice(index, 1)
+    this.bhs.splice(index, 1);
   }
 
   public ngOnInit(): void {

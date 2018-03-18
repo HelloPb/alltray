@@ -1,15 +1,33 @@
-<at-card class="atc-card">
-    <at-card-body>
-        <div class="row">
-            <div class="col-12" *ngFor="let date of item.dates; let i=index;" (click)="editDate(i)">
-                <span>{{date.from}}</span>
-                <span>{{date.to}}</span>
-            </div>
-        </div>
-    </at-card-body>
-</at-card>
+<div class="row">
+  <div class="col-12" *ngFor="let date of item.dates; let i=index;">
+    <at-card class="atc-dates pb-1">
+      <at-card-header class="justify-content-center">
+        <span>{{date.from}}</span>
+        <span class="mx-4">{{date.to}}</span>
+        <i class="fa fa-edit atc-icon" (click)="editDate(i)"></i>
+      </at-card-header>
+      <at-card-body>
 
-<div class="d-flex justify-content-center">
-    <button type="button" class="btn btn-outline-warning" (click)="back()">Back</button>
-    <button type="button" class="btn btn-outline-primary" (click)="next()">Next</button>
+        <br>
+        <label class="form-check-label" for="byWeekDays">
+          By week days
+        </label>
+        <at-week-days [weekDays]="date?.weekDays"></at-week-days>
+
+        <br>
+
+        <label class="form-check-label" for="byDates">
+          By exclusive dates
+        </label>
+        <at-exclusive-dates [exclusiveDates]="date?.exclusiveDates"></at-exclusive-dates>
+
+      </at-card-body>
+    </at-card>
+  </div>
 </div>
+<br>
+<div class="d-flex justify-content-center">
+  <button type="button" class="btn btn-outline-warning mr-2" (click)="back()">Back</button>
+  <button type="button" class="btn btn-outline-primary" (click)="next()">Next</button>
+</div>
+<br>

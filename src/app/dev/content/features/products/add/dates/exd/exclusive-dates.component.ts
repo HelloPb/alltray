@@ -9,7 +9,8 @@ import { ExclusiveDate } from '../../../../../../shared/models/exclusive-date';
 })
 export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit {
 
-  @Input() exclusiveDates: ExclusiveDate[] = [];
+  @Input() exclusiveDates: ExclusiveDate[];
+  @Input() edit = false;
 
   public formGroup: FormGroup;
 
@@ -33,7 +34,9 @@ export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit
       this.exds.removeAt(i);
     }
 
-    bhs.forEach(exd => this.updateExd(exd));
+    if (bhs) {
+      bhs.forEach(exd => this.updateExd(exd));
+    }
   }
 
   public updateExd(exd: ExclusiveDate): void {

@@ -9,7 +9,7 @@ import { ItemActiveDate } from '../../../../../shared/models/item-active-date';
 @Component({
   selector: 'at-product-add-dates',
   templateUrl: './dates.component.html',
-  styleUrls: ['./dates.component.css']
+  styleUrls: ['./dates.component.scss']
 })
 export class ProductAddDatesComponent implements OnInit {
 

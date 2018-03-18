@@ -59,6 +59,7 @@ export class EditItemService {
 
     }
   }
+
   public itemDate(id: string) {
 
     const self = this;

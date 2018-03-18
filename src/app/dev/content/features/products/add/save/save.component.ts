@@ -33,7 +33,7 @@ export class ProductAddSaveComponent implements OnInit {
 
     this.item = Object.assign(this.item, { name: '', description: '' });
 
-    this.router.navigate([`/content/products/add/bh/${this.item.id}`]);
+    this.router.navigate([`/content/products/add/dates/${this.item.id}`]);
 
   }
 

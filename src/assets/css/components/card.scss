@@ -1,63 +1,50 @@
 @import './../root.scss';
-@import './../extend.scss';
 
-.atc-card {
+at-card {
     display: block;
     width: 100%;
-    padding-left: 0.375rem;
-    padding-right: 0.375rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     background-color: $default-color;
 }
 
-.atc-card p {
+at-card p {
     padding: 0;
     margin: 0;
 }
 
-.atc-card.min-max {
+at-card.min-max {
     min-height: 25rem;
     max-height: 50rem;
 }
 
-.atc-card at-card-header {
-    height: 2.25rem;
+at-card at-card-header {
+    height: 3rem;
     display: flex;
-    font-size: 0.75rem;
     align-items: flex-end;
     margin-bottom: 0.3125rem;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+    @include at-font-size('head');
 }
 
-.atc-card .atc-cl-img {
+at-card .atc-cl-img {
     height: 2.5rem;
     width: 2.5rem;
     border-radius: 1.25rem;
     float: right;
 }
 
-.atc-card at-card-body {
+at-card at-card-body {
     height: auto;
     display: block;
-    font-size: 0.875rem;
+    @include at-font-size('body');
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
 }
 
-/* targetted styles */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .atc-card {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-}
-
-/* range styles */
 @media (min-width: 768px) {
-    .atc-card {
+    at-card {
         @include at-box-shadow('card');
-        margin-bottom: 0.625rem;
-        margin-right: 0.625rem;
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
-        width: 100%;
+        border-bottom: none;
     }
 }

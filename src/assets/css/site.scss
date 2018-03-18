@@ -17,3 +17,16 @@ h1, h2, h3, h4, h5, h6, p, span, a, div, li, button, input, label {
 .atc-dim-text {
     @include at-color(4);
 }
+
+.atc-icon {
+    font-size: 1.5rem;
+    cursor: pointer; 
+}
+
+.atc-icon.on:hover {
+    color: #004085;
+}
+
+.atc-icon.off:hover {
+    color: #991a1a;
+}

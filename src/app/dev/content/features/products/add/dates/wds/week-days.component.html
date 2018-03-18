@@ -1,28 +1,30 @@
-<div class="atc-week-days"> 
-  <label>Sunday</label>
-  <at-bh [bhs]="weekDays.sun"></at-bh>
-</div>
-<div class="atc-week-days">
-  <label>Monday</label>
-  <at-bh [bhs]="weekDays.mon"></at-bh>
-</div>
-<div class="atc-week-days">
-  <label>Tuesday</label>
-  <at-bh [bhs]="weekDays.tue"></at-bh>
-</div>
-<div class="atc-week-days">
-  <label>Wednesday</label>
-  <at-bh [bhs]="weekDays.wed"></at-bh>
-</div>
-<div class="atc-week-days">
-  <label>Thursday</label>
-  <at-bh [bhs]="weekDays.thu"></at-bh>
-</div>
-<div class="atc-week-days">
-  <label>Friday</label>
-  <at-bh [bhs]="weekDays.fri"></at-bh>
-</div>
-<div class="atc-week-days mb-0">
-  <label>Saturday</label>
-  <at-bh [bhs]="weekDays.sat"></at-bh>
-</div>
+<ng-container *ngIf="weekDays">
+  <div class="atc-week-days">
+    <label>Sunday</label>
+    <at-bh [bhs]="weekDays.sun" [edit]="edit"></at-bh>
+  </div>
+  <div class="atc-week-days">
+    <label>Monday</label>
+    <at-bh [bhs]="weekDays.mon" [edit]="edit"></at-bh>
+  </div>
+  <div class="atc-week-days">
+    <label>Tuesday</label>
+    <at-bh [bhs]="weekDays.tue" [edit]="edit"></at-bh>
+  </div>
+  <div class="atc-week-days">
+    <label>Wednesday</label>
+    <at-bh [bhs]="weekDays.wed" [edit]="edit"></at-bh>
+  </div>
+  <div class="atc-week-days">
+    <label>Thursday</label>
+    <at-bh [bhs]="weekDays.thu" [edit]="edit"></at-bh>
+  </div>
+  <div class="atc-week-days">
+    <label>Friday</label>
+    <at-bh [bhs]="weekDays.fri" [edit]="edit"></at-bh>
+  </div>
+  <div class="atc-week-days mb-0">
+    <label>Saturday</label>
+    <at-bh [bhs]="weekDays.sat" [edit]="edit"></at-bh>
+  </div>
+</ng-container>
