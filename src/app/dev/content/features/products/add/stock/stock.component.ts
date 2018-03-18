@@ -23,8 +23,10 @@ export class ProductAddStockComponent implements OnInit {
   private create(): void {
 
     this.formGroup = this.formBuilder.group({
-      name: '',
-      description: ''
+      availableStocks: '',
+      unlimited: '',
+      pricePerStock: '',
+      noOfPeices: ''
     });
 
   }

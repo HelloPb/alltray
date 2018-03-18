@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { EditItemResolver } from '../services/resolver/edit-item.resolver';
 import { BlankItemResolver } from '../services/resolver/blank-item.resolver';
 import { ProductAddDatesComponent } from './dates.component';
-import { ExclusiveDatesComponent } from './exd/exclusive-dates.component';
-import { WeekDaysComponent } from './wds/week-days.component';
 import { EditItemDateResolver } from '../services/resolver/edit-item-date.resolver';
 import { EditItemDateExdResolver } from '../services/resolver/edit-item-date-exd.resolver';
 import { EditItemDateWdsResolver } from '../services/resolver/edit-item-date-wds.resolver';

@@ -1,10 +1,16 @@
 <form [formGroup]="formGroup" novalidate>
-  <div class="form-group">
-    <input type="text" class="form-control" id="itemName" aria-describedby="itemName" placeholder="Enter item name">
-  </div>
-  <div class="form-group">
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Describe your product here">
-  </div>
-  <button type="button" class="btn btn-outline-warning" (click)="back()">Back</button>
-  <button type="button" class="btn btn-outline-primary" (click)="save()">Save</button>
+
+  <at-card>
+    <at-card-header>
+      add preview here
+    </at-card-header>
+
+    <at-card-body>
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-outline-warning mr-2" (click)="back()">Back</button>
+        <button type="button" class="btn btn-outline-primary" (click)="save()">Save</button>
+      </div>
+    </at-card-body>
+  </at-card>
+
 </form>

@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ProductAddDateComponent } from './date.component';
 import { SharedModule } from '../../../../../../shared/modules/shared/shared.module';
 import { ProductAddDateRoutingModule } from './date-routing.module';
-import { ExclusiveDatesModule } from '../exd/exclusive-dates.module';
-import { WeekDaysModule } from '../wds/week-days.module';
+import { WeekDaysModule } from './wds/week-days.module';
+import { ExclusiveDatesModule } from './exd/exclusive-dates.module';
 
 @NgModule({
   imports: [

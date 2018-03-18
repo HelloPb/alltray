@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ExclusiveDatesComponent } from './exclusive-dates.component';
-import { SharedModule } from '../../../../../../shared/modules/shared/shared.module';
 import { BhModule } from '../bhs/bh.module';
+import { SharedModule } from '../../../../../../../shared/modules/shared/shared.module';
 
 @NgModule({
   imports: [

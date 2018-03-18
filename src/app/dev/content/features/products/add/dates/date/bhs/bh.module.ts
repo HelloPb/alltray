@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BhComponent } from './bh.component';
-import { SharedModule } from '../../../../../../shared/modules/shared/shared.module';
+import { SharedModule } from '../../../../../../../shared/modules/shared/shared.module';
 
 @NgModule({
   imports: [

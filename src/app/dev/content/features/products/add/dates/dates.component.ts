@@ -20,6 +20,18 @@ export class ProductAddDatesComponent implements OnInit {
     private router: Router) {
   }
 
+  public deleteDate(index: number): void {
+
+    this.item.dates.splice(index, 1);
+
+  }
+
+  public addDate(): void {
+
+    this.item.dates.unshift(new ItemActiveDate());
+
+  }
+
   public editDate(index: string): void {
 
     this.router.navigate([`/content/products/add/dates/${this.item.id}/date/${index}`]);

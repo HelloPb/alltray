@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
-import { ExclusiveDate } from '../../../../../../shared/models/exclusive-date';
+import { ExclusiveDate } from '../../../../../../../shared/models/exclusive-date';
 
 @Component({
   selector: 'at-exclusive-dates',

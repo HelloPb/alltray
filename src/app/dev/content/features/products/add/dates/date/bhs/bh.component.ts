@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
-import { Bhs, HHMM } from '../../../../../../shared/models/bhs';
+import { Bhs } from '../../../../../../../shared/models/bhs';
 
 @Component({
   selector: 'at-bh',
