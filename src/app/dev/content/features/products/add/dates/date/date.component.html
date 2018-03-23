@@ -11,29 +11,35 @@
       </div>
 
       <div style="height: 1rem">&nbsp;</div>
-      <div class="form-check">
+      <div class="form-check mb-4">
         <input class="form-check-input" type="checkbox" formControlName="byWeekDays">
         <label class="form-check-label" for="byWeekDays">
           By week days
         </label>
       </div>
-      <at-week-days [weekDays]="weekDays" [edit]="true"></at-week-days>
+
+      <div class="mx-auto" style="max-width: 260px; width: 100%">
+        <at-week-days [weekDays]="weekDays" [edit]="true"></at-week-days>
+      </div>
 
       <div style="height: 2rem">&nbsp;</div>
-      <div class="form-check">
+      <div class="form-check mb-4">
         <input class="form-check-input" type="checkbox" formControlName="byDates">
         <label class="form-check-label" for="byDates">
           By exclusive dates
         </label>
       </div>
 
-      <at-exclusive-dates [exclusiveDates]="date?.exclusiveDates" [edit]="true" (formGroupEvent)="setExds($event)"></at-exclusive-dates>
+      <div class="mx-auto" style="max-width: 260px; width: 100%">
+        <at-exclusive-dates [exds]="exclusiveDates" [edit]="true"></at-exclusive-dates>
+      </div>
+
       <br>
 
       <div class="d-flex justify-content-center">
         <div>
-            <button type="button" class="btn btn-outline-warning mb-3" (click)="update()">Update</button>
-            <button type="button" class="btn btn-outline-warning mb-3" (click)="discard()">Discard</button>
+          <button type="button" class="btn btn-outline-warning mb-3" (click)="update()">Update</button>
+          <button type="button" class="btn btn-outline-warning mb-3" (click)="discard()">Discard</button>
         </div>
       </div>
 

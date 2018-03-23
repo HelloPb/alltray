@@ -16,6 +16,7 @@ export class ProductAddDateComponent implements OnInit {
   private date: ItemActiveDate;
   public formGroup: FormGroup;
   public weekDays;
+  public exclusiveDates;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,14 +31,9 @@ export class ProductAddDateComponent implements OnInit {
       from: '',
       to: '',
       byWeekDays: true,
-      byDates: false,
-      exds: ''
+      byDates: false
     });
 
-  }
-
-  public setExds(formGroup: FormGroup): void {
-    this.formGroup.setControl('exds', formGroup.controls['exds']);
   }
 
   private updateForm(date: ItemActiveDate): void {
@@ -55,6 +51,7 @@ export class ProductAddDateComponent implements OnInit {
 
     this.date = Object.assign(this.date, this.formGroup.value);
     this.date.weekDays = this.weekDays;
+    this.date.exclusiveDates = this.exclusiveDates;
     this.router.navigate([`/content/products/add/dates/${this.id}`]);
 
   }
@@ -68,10 +65,15 @@ export class ProductAddDateComponent implements OnInit {
   public ngOnInit() {
 
     this.route.data.subscribe((data: { date: ItemActiveDate, item: Item }) => {
+
       this.date = data.date;
       this.id = data.item.id;
+
       this.weekDays = _.cloneDeep(this.date.weekDays);
+      this.exclusiveDates = _.cloneDeep(this.date.exclusiveDates);
+
       this.updateForm(this.date);
+
     });
 
   }

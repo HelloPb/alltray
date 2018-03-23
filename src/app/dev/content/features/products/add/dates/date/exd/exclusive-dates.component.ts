@@ -9,9 +9,8 @@ import { ExclusiveDate } from '../../../../../../../shared/models/exclusive-date
 })
 export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit {
 
-  @Input() exclusiveDates: ExclusiveDate[];
+  @Input() exds: ExclusiveDate[];
   @Input() edit = false;
-  @Output() formGroupEvent = new EventEmitter<FormGroup>();
 
   public formGroup: FormGroup;
 
@@ -22,29 +21,31 @@ export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit
 
   private createForm(): void {
     this.formGroup = this.formBuilder.group({
-      exds: this.formBuilder.array([])
+      exdsArray: this.formBuilder.array([])
     });
   }
 
   private updateForm(): void {
   }
 
-  private updateExds(bhs: ExclusiveDate[]): void {
+  private updateExds(exds: ExclusiveDate[]): void {
 
-    for (let i = 0; i < this.exds.length; i++) {
-      this.exds.removeAt(i);
+    for (let i = 0; i < this.exdsArray.length; i++) {
+      this.exdsArray.removeAt(i);
     }
 
-    if (bhs) {
-      bhs.forEach(exd => this.updateExd(exd));
+    if (exds) {
+      exds.forEach(exd => this.updateExd(exd));
     }
   }
 
   public updateExd(exd: ExclusiveDate): void {
     const formGroup = this.createExdForm();
     this.updateExdForm(formGroup, exd);
-    this.exds.push(formGroup);
+    this.exdsArray.push(formGroup);
+    this.copyDataToModelOnFormValueChange(formGroup, exd);
   }
+
 
   private createExdForm(): FormGroup {
     return this.formBuilder.group({
@@ -60,19 +61,26 @@ export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit
     });
   }
 
-  get exds(): FormArray {
-    return this.formGroup.get('exds') as FormArray;
+  private copyDataToModelOnFormValueChange(formGroup: FormGroup, exd: ExclusiveDate): void {
+    formGroup.valueChanges.subscribe( value => {
+      exd.from = value.from;
+      exd.to = value.to;
+    });
+  }
+
+  get exdsArray(): FormArray {
+    return this.formGroup.get('exdsArray') as FormArray;
   }
 
   public addExd(): void {
     const exd = new ExclusiveDate();
-    this.exclusiveDates.push(exd);
+    this.exds.push(exd);
     this.updateExd(exd);
   }
 
   public deleteExd(index: number): void {
-    this.exclusiveDates.splice(index, 1);
-    this.exds.removeAt(index);
+    this.exds.splice(index, 1);
+    this.exdsArray.removeAt(index);
   }
 
   public ngOnChanges(changes: SimpleChanges): void {
@@ -80,7 +88,7 @@ export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit
       if (changes.hasOwnProperty(propName)) {
         const chng = changes[propName];
         switch (propName) {
-          case 'exclusiveDates': this.updateExds(chng.currentValue);
+          case 'exds': this.updateExds(chng.currentValue);
             break;
         }
       }
@@ -88,7 +96,6 @@ export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit
   }
 
   public ngOnInit(): void {
-    this.formGroupEvent.emit(this.formGroup);
   }
 
   public ngAfterViewInit(): void {
