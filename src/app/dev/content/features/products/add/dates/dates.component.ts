@@ -40,15 +40,11 @@ export class ProductAddDatesComponent implements OnInit {
 
   public back(): void {
 
-    this.item = Object.assign(this.item, { name: '', description: '' });
-
     this.router.navigate([`/content/products/add/stock/${this.item.id}`]);
 
   }
 
   public next(): void {
-
-    this.item = Object.assign(this.item, { name: '', description: '' });
 
     this.router.navigate([`/content/products/add/save/${this.item.id}`]);
 

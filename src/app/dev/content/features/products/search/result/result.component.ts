@@ -24,7 +24,7 @@ export class ProductSearchResultComponent implements OnInit {
 
   public ngOnInit() {
     this.itemService.search('').subscribe(result => {
-      this.items = (result.recipes as Item[]).map(x => { x.expand = false; return x; });
+      this.items = result;
     });
   }
 }

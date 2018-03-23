@@ -17,7 +17,7 @@
           By week days
         </label>
       </div>
-      <at-week-days [weekDays]="date?.weekDays" [edit]="true"></at-week-days>
+      <at-week-days [weekDays]="weekDays" [edit]="true"></at-week-days>
 
       <div style="height: 2rem">&nbsp;</div>
       <div class="form-check">
@@ -27,11 +27,14 @@
         </label>
       </div>
 
-      <at-exclusive-dates [exclusiveDates]="date?.exclusiveDates" [edit]="true"></at-exclusive-dates>
+      <at-exclusive-dates [exclusiveDates]="date?.exclusiveDates" [edit]="true" (formGroupEvent)="setExds($event)"></at-exclusive-dates>
       <br>
 
       <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-outline-warning mb-3" (click)="back()">Go Back</button>
+        <div>
+            <button type="button" class="btn btn-outline-warning mb-3" (click)="update()">Update</button>
+            <button type="button" class="btn btn-outline-warning mb-3" (click)="discard()">Discard</button>
+        </div>
       </div>
 
     </form>

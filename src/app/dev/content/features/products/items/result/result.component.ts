@@ -20,7 +20,7 @@ export class ProductItemsResultComponent implements OnInit {
   private getItems(params: ParamMap): void {
     const id = params.get('id');
     this.itemService.search('').subscribe(result => {
-      this.items = (result.recipes as Item[]).map(x => { x.expand = false; return x; });
+      this.items = result.recipes;
     });
   }
 

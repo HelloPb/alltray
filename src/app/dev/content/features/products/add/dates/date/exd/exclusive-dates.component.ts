@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, OnChanges, SimpleChanges, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { ExclusiveDate } from '../../../../../../../shared/models/exclusive-date';
 
@@ -11,6 +11,7 @@ export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit
 
   @Input() exclusiveDates: ExclusiveDate[];
   @Input() edit = false;
+  @Output() formGroupEvent = new EventEmitter<FormGroup>();
 
   public formGroup: FormGroup;
 
@@ -87,9 +88,9 @@ export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit
   }
 
   public ngOnInit(): void {
+    this.formGroupEvent.emit(this.formGroup);
   }
 
   public ngAfterViewInit(): void {
-
   }
 }

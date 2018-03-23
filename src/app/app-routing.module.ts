@@ -7,7 +7,6 @@ const routes: Routes = [
     path: 'content',
     loadChildren: 'app/dev/content/content.module#ContentExModule'
   }
-  // { path: '**', redirectTo: 'content' }
 ];
 
 @NgModule({

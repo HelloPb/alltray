@@ -29,9 +29,18 @@ export class ProductAddChooseComponent implements OnInit {
 
   }
 
+  private update(item: Item): void {
+
+    this.formGroup.patchValue({
+      name: item.name,
+      description: item.description
+    });
+
+  }
+
   public next(): void {
 
-    this.item = Object.assign(this.item, { name: '', description: '' });
+    this.item = Object.assign(this.item, this.formGroup.value);
 
     this.router.navigate([`/content/products/add/stock/${this.item.id}`]);
 
@@ -46,6 +55,7 @@ export class ProductAddChooseComponent implements OnInit {
   public ngOnInit() {
     this.route.data.subscribe((data: { item: Item }) => {
       this.item = data.item;
+      this.update(this.item);
     });
   }
 }

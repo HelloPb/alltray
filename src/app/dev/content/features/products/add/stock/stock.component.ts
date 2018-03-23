@@ -23,7 +23,7 @@ export class ProductAddStockComponent implements OnInit {
   private create(): void {
 
     this.formGroup = this.formBuilder.group({
-      availableStocks: '',
+      stocks: '',
       unlimited: '',
       pricePerStock: '',
       noOfPeices: ''
@@ -31,9 +31,20 @@ export class ProductAddStockComponent implements OnInit {
 
   }
 
+  private update(item: Item): void {
+
+    this.formGroup.patchValue({
+      stocks: item.stocks,
+      unlimited: item.unlimited,
+      pricePerStock: item.pricePerStock,
+      noOfPeices: item.noOfPeices
+    });
+
+  }
+
   public back(): void {
 
-    this.item = Object.assign(this.item, { name: '', description: '' });
+    this.item = Object.assign(this.item, this.formGroup.value);
 
     this.router.navigate([`/content/products/add/choose/${this.item.id}`]);
 
@@ -41,7 +52,7 @@ export class ProductAddStockComponent implements OnInit {
 
   public next(): void {
 
-    this.item = Object.assign(this.item, { name: '', description: '' });
+    this.item = Object.assign(this.item, this.formGroup.value);
 
     this.router.navigate([`/content/products/add/dates/${this.item.id}`]);
 
@@ -50,6 +61,8 @@ export class ProductAddStockComponent implements OnInit {
   public ngOnInit() {
     this.route.data.subscribe((data: { item: Item }) => {
       this.item = data.item;
+      this.update(this.item);
     });
   }
+
 }
