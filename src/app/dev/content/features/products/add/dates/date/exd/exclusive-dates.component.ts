@@ -1,18 +1,22 @@
-import { Component, OnInit, Input, AfterViewInit, OnChanges, SimpleChanges, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, OnChanges, SimpleChanges, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { ExclusiveDate } from '../../../../../../../shared/models/exclusive-date';
+import { Subscription } from 'rxjs/Subscription';
+import { AtUtil } from '../../../../../../../shared/utils/at-util';
 
 @Component({
   selector: 'at-exclusive-dates',
   templateUrl: './exclusive-dates.component.html',
   styleUrls: ['./exclusive-dates.component.scss']
 })
-export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit {
+export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
 
   @Input() exds: ExclusiveDate[];
   @Input() edit = false;
 
   public formGroup: FormGroup;
+
+  private subscriptions: Subscription[] = [];
 
   constructor(
     private formBuilder: FormBuilder) {
@@ -62,10 +66,10 @@ export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit
   }
 
   private copyDataToModelOnFormValueChange(formGroup: FormGroup, exd: ExclusiveDate): void {
-    formGroup.valueChanges.subscribe( value => {
+    this.subscriptions.push(formGroup.valueChanges.subscribe(value => {
       exd.from = value.from;
       exd.to = value.to;
-    });
+    }));
   }
 
   get exdsArray(): FormArray {
@@ -100,4 +104,9 @@ export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit
 
   public ngAfterViewInit(): void {
   }
+
+  public ngOnDestroy(): void {
+    AtUtil.unsubscribe(this.subscriptions);
+  }
+
 }
