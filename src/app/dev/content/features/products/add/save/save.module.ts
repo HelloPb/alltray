@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from '../../../../../shared/modules/shared/shared.module';
 import { ProductAddSaveComponent } from './save.component';
 import { ProductAddSaveRoutingModule } from './save-routing.module';
+import { SharedModule } from '../../../../../shared/modules/shared.module';
 
 @NgModule({
   imports: [

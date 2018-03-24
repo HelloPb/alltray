@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { WeekDaysComponent } from './week-days.component';
 import { BhModule } from '../bhs/bh.module';
-import { SharedModule } from '../../../../../../../shared/modules/shared/shared.module';
+import { SharedModule } from '../../../../../../../shared/modules/shared.module';
 
 @NgModule({
   imports: [

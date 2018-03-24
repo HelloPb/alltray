@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from '../../../../../shared/modules/shared/shared.module';
 import { ProductAddStockComponent } from './stock.component';
 import { ProductAddStockRoutingModule } from './stock-routing.module';
+import { SharedModule } from '../../../../../shared/modules/shared.module';
 
 @NgModule({
   imports: [

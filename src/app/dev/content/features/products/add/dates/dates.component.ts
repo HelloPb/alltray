@@ -13,7 +13,7 @@ import { ItemActiveDate } from '../../../../../shared/models/item-active-date';
 })
 export class ProductAddDatesComponent implements OnInit {
 
-  private item: Item;
+  public item: Item;
 
   constructor(
     private route: ActivatedRoute,

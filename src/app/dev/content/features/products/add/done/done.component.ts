@@ -27,7 +27,7 @@ export class ProductAddDoneComponent implements OnInit {
 
   }
 
-  public done(id: string): void {
+  public done(): void {
 
     this.router.navigate([`/`]);
 

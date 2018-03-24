@@ -8,7 +8,7 @@ import { Directive, Input } from '@angular/core';
   selector: '[var]',
   exportAs: 'var'
 })
-class VarDirective {
+export class VarDirective {
   @Input() var: any;
 }
 
