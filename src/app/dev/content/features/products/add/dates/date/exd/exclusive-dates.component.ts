@@ -50,7 +50,6 @@ export class ExclusiveDatesComponent implements OnInit, OnChanges, AfterViewInit
     this.copyDataToModelOnFormValueChange(formGroup, exd);
   }
 
-
   private createExdForm(): FormGroup {
     return this.formBuilder.group({
       from: '',

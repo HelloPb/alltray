@@ -5,18 +5,21 @@ export class Item {
     name: string;
     description: string;
     stocks: string;
+    remainig: string;
     unlimited: boolean;
     pricePerStock: string;
     noOfPeices: string;
+    img: string;
     dates: ItemActiveDate[];
     constructor() {
-        this.id = '0';
+        this.id = undefined;
         this.name = '';
         this.description = '';
         this.stocks = '';
         this.unlimited = false;
         this.pricePerStock = '';
         this.noOfPeices = '';
+        this.img = '';
         this.dates = [new ItemActiveDate()];
     }
 }

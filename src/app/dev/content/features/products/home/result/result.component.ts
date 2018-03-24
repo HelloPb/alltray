@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ItemsService } from '../../../../../shared/services/api/items/items.service';
 import { Item } from '../../../../../shared/models/items';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'at-product-home-result',
@@ -10,7 +11,7 @@ import { Item } from '../../../../../shared/models/items';
 })
 export class ProductHomeResultComponent implements OnInit {
 
-  public items: Item[] = [];
+  public items$: Observable<Item[]>;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,13 +19,10 @@ export class ProductHomeResultComponent implements OnInit {
     private itemService: ItemsService) { }
 
   public next(id: string): void {
-    const paths = id.split('/');
-    this.router.navigate([`/content/products/items/${paths[paths.length - 1]}`]);
+    this.router.navigate([`/content/products/items/${id}`]);
   }
 
   public ngOnInit() {
-    this.itemService.search('').subscribe(result => {
-      this.items = result.recipes;
-    });
+    this.items$ = this.itemService.search('');
   }
 }

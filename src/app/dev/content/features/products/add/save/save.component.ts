@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from '../../../../../shared/models/items';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ItemsService } from '../../../../../shared/services/api/items/items.service';
 
 @Component({
   selector: 'at-product-add-save',
@@ -16,22 +17,18 @@ export class ProductAddSaveComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder,
+    private itemService: ItemsService) {
     this.create();
   }
 
   private create(): void {
 
-    this.formGroup = this.formBuilder.group({
-      name: '',
-      description: ''
-    });
+    this.formGroup = this.formBuilder.group({});
 
   }
 
   public back(): void {
-
-    this.item = Object.assign(this.item, { name: '', description: '' });
 
     this.router.navigate([`/content/products/add/dates/${this.item.id}`]);
 
@@ -39,10 +36,24 @@ export class ProductAddSaveComponent implements OnInit {
 
   public save(): void {
 
-    this.item = Object.assign(this.item, { name: '', description: '' });
+    if (this.item.id === '0') {
 
-    this.router.navigate([`/content/products/add/done/${this.item.id}`]);
+      this.item.id = undefined;
 
+      this.itemService.post(this.item).subscribe(s => {
+
+        this.router.navigate([`/content/products/add/done/${s.id}`]);
+
+      });
+
+    } else {
+
+      this.itemService.put(this.item.id, this.item).subscribe(s => {
+
+        this.router.navigate([`/content/products/add/done/${s.id}`]);
+
+      });
+    }
   }
 
   public ngOnInit() {
