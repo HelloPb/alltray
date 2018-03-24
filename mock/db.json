@@ -3,10 +3,10 @@
     {
       "name": "",
       "description": "",
-      "stocks": "",
+      "stock": "",
       "unlimited": false,
-      "pricePerStock": "",
-      "noOfPeices": "",
+      "pps": "",
+      "nops": "",
       "img": "",
       "dates": [
         {
@@ -114,7 +114,7 @@
               }
             ]
           },
-          "exclusiveDates": [
+          "eds": [
             {
               "from": "01-05-1982",
               "to": "01-05-2053",
@@ -141,10 +141,10 @@
     {
       "name": "1111",
       "description": "11111",
-      "stocks": "1111111",
+      "stock": "1111111",
       "unlimited": true,
-      "pricePerStock": "54535",
-      "noOfPeices": "424324",
+      "pps": "54535",
+      "nops": "424324",
       "img": "",
       "dates": [
         {
@@ -252,7 +252,7 @@
               }
             ]
           },
-          "exclusiveDates": [
+          "eds": [
             {
               "from": "01-05-1982",
               "to": "01-05-2053",
@@ -279,10 +279,10 @@
     {
       "name": "7",
       "description": "dfdsf7",
-      "stocks": "7",
+      "stock": "7",
       "unlimited": true,
-      "pricePerStock": "7",
-      "noOfPeices": "7",
+      "pps": "7",
+      "nops": "7",
       "img": "",
       "dates": [
         {
@@ -390,7 +390,7 @@
               }
             ]
           },
-          "exclusiveDates": [
+          "eds": [
             {
               "from": "01-05-1982",
               "to": "01-05-2053",

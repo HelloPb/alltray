@@ -23,10 +23,10 @@ export class ProductAddStockComponent implements OnInit {
   private create(): void {
 
     this.formGroup = this.formBuilder.group({
-      stocks: '',
+      stock: '',
       unlimited: '',
-      pricePerStock: '',
-      noOfPeices: ''
+      pps: '',
+      nops: ''
     });
 
   }
@@ -34,10 +34,10 @@ export class ProductAddStockComponent implements OnInit {
   private update(item: Item): void {
 
     this.formGroup.patchValue({
-      stocks: item.stocks,
+      stock: item.stock,
       unlimited: item.unlimited,
-      pricePerStock: item.pricePerStock,
-      noOfPeices: item.noOfPeices
+      pps: item.pps,
+      nops: item.nops
     });
 
   }

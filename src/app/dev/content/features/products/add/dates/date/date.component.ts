@@ -16,7 +16,7 @@ export class ProductAddDateComponent implements OnInit {
   private date: ItemActiveDate;
   public formGroup: FormGroup;
   public weekDays;
-  public exclusiveDates;
+  public eds;
 
   constructor(
     private route: ActivatedRoute,
@@ -51,7 +51,7 @@ export class ProductAddDateComponent implements OnInit {
 
     this.date = Object.assign(this.date, this.formGroup.value);
     this.date.weekDays = this.weekDays;
-    this.date.exclusiveDates = this.exclusiveDates;
+    this.date.eds = this.eds;
     this.router.navigate([`/content/products/add/dates/${this.id}`]);
 
   }
@@ -70,7 +70,7 @@ export class ProductAddDateComponent implements OnInit {
       this.id = data.item.id;
 
       this.weekDays = _.cloneDeep(this.date.weekDays);
-      this.exclusiveDates = _.cloneDeep(this.date.exclusiveDates);
+      this.eds = _.cloneDeep(this.date.eds);
 
       this.updateForm(this.date);
 

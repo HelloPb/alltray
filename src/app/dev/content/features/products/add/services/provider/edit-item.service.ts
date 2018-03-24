@@ -108,8 +108,8 @@ export class EditItemService {
 
       if (self.activeItemDateForEdit) {
 
-        if (self.activeItemDateForEdit.exclusiveDates) {
-          if (self.activeItemDateForEdit.exclusiveDates.length >= +id + 1) {
+        if (self.activeItemDateForEdit.eds) {
+          if (self.activeItemDateForEdit.eds.length >= +id + 1) {
             bExist = true;
           }
         }
@@ -117,7 +117,7 @@ export class EditItemService {
 
       if (bExist) {
 
-        observer.next(self.activeItemDateForEdit.exclusiveDates[+id]);
+        observer.next(self.activeItemDateForEdit.eds[+id]);
 
       } else {
 
@@ -139,7 +139,7 @@ export class EditItemService {
       if (self.activeItemDateForEdit) {
 
         if (self.activeItemDateForEdit.weekDays) {
-          if (self.activeItemDateForEdit.exclusiveDates[id]) {
+          if (self.activeItemDateForEdit.eds[id]) {
             bExist = true;
           }
         }
