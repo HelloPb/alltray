@@ -6,6 +6,11 @@
         <input type="text" class="form-control" id="itemName" aria-describedby="itemName" placeholder="Enter item name" formControlName="name">
       </div>
       <div class="form-group">
+        <select type="text" class="form-control" id="category" aria-describedby="category" formControlName="category">
+          <option *ngFor="let c of categories" [value]="c.value">{{c.name}}</option>
+        </select>
+      </div>
+      <div class="form-group">
         <textarea class="form-control" rows="4" cols="50" placeholder="Describe your item here" formControlName="description"></textarea>
       </div>
       <div class="d-flex justify-content-center">

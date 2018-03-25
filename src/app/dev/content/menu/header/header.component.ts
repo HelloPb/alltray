@@ -8,6 +8,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class HeaderComponent implements OnInit {
 
+  public expand = false;
+  public expandProfile = false;
   public formGroup: FormGroup;
 
   constructor(

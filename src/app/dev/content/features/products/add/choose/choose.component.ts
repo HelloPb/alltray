@@ -12,6 +12,20 @@ export class ProductAddChooseComponent implements OnInit {
 
   private item: Item;
   public formGroup: FormGroup;
+  private categories = [
+    { name: 'Fresh Vegitables', value: '1' },
+    { name: 'Groceries', value: '2' },
+    { name: 'Home Food', value: '3' },
+    { name: 'Milk', value: '4' },
+    { name: 'Ayurvadic', value: '5' },
+    { name: 'Plumber', value: '6' },
+    { name: 'Electrician', value: '7' },
+    { name: 'Kumbara', value: '8' },
+    { name: 'Home Cook', value: '9' },
+    { name: 'Achari', value: '10' },
+    { name: 'Ganiga', value: '11' },
+    { name: 'Sherigara', value: '12' }
+  ];
 
   constructor(
     private route: ActivatedRoute,
@@ -24,7 +38,8 @@ export class ProductAddChooseComponent implements OnInit {
 
     this.formGroup = this.formBuilder.group({
       name: '',
-      description: ''
+      description: '',
+      category: ''
     });
 
   }

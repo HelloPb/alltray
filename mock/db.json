@@ -137,6 +137,284 @@
         }
       ],
       "id": 1
+    },
+    {
+      "name": "",
+      "description": "",
+      "stock": "",
+      "unlimited": false,
+      "pps": "",
+      "nops": "",
+      "img": "#",
+      "dates": [
+        {
+          "from": "17-3-2018",
+          "to": "5-3-2018",
+          "byWeekDays": true,
+          "byDates": false,
+          "weekDays": {
+            "sun": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "mon": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "tue": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "wed": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "thu": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "fri": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "sat": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ]
+          },
+          "eds": [
+            {
+              "from": "15-3-2018",
+              "to": "23-3-2018",
+              "bhs": [
+                {
+                  "from": {
+                    "h": 9,
+                    "m": 0,
+                    "am": true
+                  },
+                  "to": {
+                    "h": 9,
+                    "m": 0,
+                    "am": true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "category": "",
+      "id": 2
+    },
+    {
+      "name": "",
+      "description": "",
+      "stock": "",
+      "unlimited": false,
+      "pps": "",
+      "nops": "",
+      "img": "#",
+      "dates": [
+        {
+          "from": "01-05-1944",
+          "to": "01-05-1966",
+          "byWeekDays": true,
+          "byDates": false,
+          "weekDays": {
+            "sun": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "mon": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "tue": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "wed": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "thu": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "fri": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "sat": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ]
+          },
+          "eds": [
+            {
+              "from": "01-05-1982",
+              "to": "01-05-2053",
+              "bhs": [
+                {
+                  "from": {
+                    "h": 9,
+                    "m": 0,
+                    "am": true
+                  },
+                  "to": {
+                    "h": 9,
+                    "m": 0,
+                    "am": true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "category": "",
+      "id": 3
     }
   ]
 }
