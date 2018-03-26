@@ -5,7 +5,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'content', pathMatch: 'full' },
   {
     path: 'content',
-    loadChildren: 'app/dev/content/content.module#ContentExModule'
+    loadChildren: 'app/content/content.module#ContentExModule'
   }
 ];
 

@@ -1,0 +1,15 @@
+<div class="row no-gutters">
+  <div class="col-12 col-md-6 p-1" *ngFor="let item of items$|async">
+    <at-card (click)="next(id)">
+      <at-card-header>
+        <span class="atc-title">{{item.name}}</span>
+        <span class="atc-dim-text">({{item.stock}})</span>
+      </at-card-header>
+      <at-card-body>
+        <img [src]="item.img" class="atc-small-img float-right">
+        <p>Idli, Vada, Dosa, Chapati, Chitranna</p>
+        <p class="atc-dim-text">Uppittu, Bonda, Chuteny, Palak Panner and more ...</p>
+      </at-card-body>
+    </at-card>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+  div.listing {
+    columns: 15em;
+    column-gap: 1em;
+  }
+  
+  div.listing article {
+    break-inside: avoid;
+  }
+  
+  /* pretty it up! */
+  div.listing article { 
+    border-radius: 0.5em;
+    margin: 1em 0;
+    background-color: #CCC;
+    padding: .5em;
+  }
+  
+  div.listing article:first-child {
+    margin-top: 0;
+  }
+  
+  div.listing article:nth-child(odd) {
+    background-color: #ffff99;
+  }
+  

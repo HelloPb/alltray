@@ -6,6 +6,7 @@ at-card {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     background-color: $default-color;
     padding: 0.75rem 0;
+    height: 100%;
 }
 
 at-card.min-max {
@@ -37,11 +38,4 @@ at-card-body {
     @include at-font-size('body');
     padding-left: 0.75rem;
     padding-right: 0.75rem;
-}
-
-@media (min-width: 768px) {
-    at-card {
-        @include at-box-shadow('card');
-        border-bottom: none;
-    }
 }
