@@ -1,24 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductAddDoneComponent } from './done.component';
-import { EditItemResolver } from '../services/resolver/edit-item.resolver';
 import { Routes, RouterModule } from '@angular/router';
-import { BlankItemResolver } from '../services/resolver/blank-item.resolver';
-
+import { ActiveItemResolver } from '../services/resolver/active-item.resolver';
 const routes: Routes = [
   {
     path: '',
-    children: [
-      {
-        path: '',
-        component: ProductAddDoneComponent,
-        resolve: { item: BlankItemResolver }
-      },
-      {
-        path: ':id',
-        component: ProductAddDoneComponent,
-        resolve: { item: EditItemResolver }
-      }]
+    component: ProductAddDoneComponent,
+    resolve: { item: ActiveItemResolver }
   }
 ];
 

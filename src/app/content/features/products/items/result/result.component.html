@@ -1,15 +1,13 @@
 <div class="row no-gutters">
-  <div class="col-12 col-md-6 p-1" *ngFor="let item of items$|async">
-    <at-card [ngClass]="{'min-max': toggle.var===true}" #toggle="var" var="" (click)="toggle.var=!toggle.var">
-      <at-card-header>
-        <span class="atc-title">{{item.name}}</span>
-        <span class="atc-dim-text">({{item.stock}})</span>
-      </at-card-header>
-      <at-card-body>
-        <img [src]="item.img" class="atc-small-img float-right">
-        <p>Idle, Vada, Dosa, Chapati, Chitranna</p>
-        <p class="atc-dim-text">Uppittu, Bonda, Chuteny, Palak Panner and more ...</p>
-      </at-card-body>
-    </at-card>
-  </div>
+  <at-card class="col-12 col-md-6 p-1" *ngFor="let item of items$|async" [ngClass]="{'min-max': toggle.var===true}" #toggle="var" var="" (click)="toggle.var=!toggle.var">
+    <at-card-header>
+      <span class="atc-title">{{item.name}}</span>
+      <span class="atc-dim-text">({{item.stock}})</span>
+    </at-card-header>
+    <at-card-body>
+      <img [src]="item.img" class="atc-small-img float-right">
+      <p>Idle, Vada, Dosa, Chapati, Chitranna</p>
+      <p class="atc-dim-text">Uppittu, Bonda, Chuteny, Palak Panner and more ...</p>
+    </at-card-body>
+  </at-card>
 </div>

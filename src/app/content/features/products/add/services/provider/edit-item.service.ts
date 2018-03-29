@@ -60,6 +60,30 @@ export class EditItemService {
     }
   }
 
+  public item() {
+
+    let bExist = false;
+
+    if (this.item$) {
+
+      const item = this.item$.value;
+
+      if (item) {
+        bExist = true;
+      }
+    }
+
+    if (bExist) {
+
+      return this.item$;
+
+    } else {
+
+      return Observable.create(observer => { observer.next(); observer.complete(); });
+
+    }
+  }
+
   public itemDate(id: string) {
 
     const self = this;
@@ -167,11 +191,7 @@ export class EditItemService {
     const self = this;
     return Observable.create(observer => {
       self.itemService.get(id).subscribe(
-        x => {
-
-          const item = new Item();
-
-          item.id = '0';
+        item => {
 
           delete this.activeItemDateForEdit;
           this.item$ = new BehaviorSubject<Item>(item);

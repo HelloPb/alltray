@@ -30,7 +30,7 @@ export class ProductAddSaveComponent implements OnInit {
 
   public back(): void {
 
-    this.router.navigate([`/content/products/add/dates/${this.item.id}`]);
+    this.router.navigate([`/content/products/add/${this.item.id}/dates`]);
 
   }
 
@@ -42,7 +42,7 @@ export class ProductAddSaveComponent implements OnInit {
 
       this.itemService.post(this.item).subscribe(s => {
 
-        this.router.navigate([`/content/products/add/done/${s.id}`]);
+        this.router.navigate([`/content/products/add/${s.id}/done`]);
 
       });
 
@@ -50,7 +50,7 @@ export class ProductAddSaveComponent implements OnInit {
 
       this.itemService.put(this.item.id, this.item).subscribe(s => {
 
-        this.router.navigate([`/content/products/add/done/${s.id}`]);
+        this.router.navigate([`/content/products/add/${s.id}/done`]);
 
       });
     }

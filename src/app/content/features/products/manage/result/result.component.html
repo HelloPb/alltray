@@ -1,15 +1,11 @@
-<div class="row no-gutters">
-  <div class="col-12 col-md-6 p-1" *ngFor="let item of items$|async">
-    <at-card>
-      <at-card-header>
-        <span class="atc-title">{{item.name}}</span>
-        <span class="atc-dim-text">({{item.stock}})</span>
-      </at-card-header>
-      <at-card-body>
-        <img [src]="item.img" class="atc-small-img float-right">
-        <p>Idle, Vada, Dosa, Chapati, Chitranna</p>
-        <p class="atc-dim-text">Uppittu, Bonda, Chuteny, Palak Panner and more ...</p>
-      </at-card-body>
-    </at-card>
-  </div>
+<div class="row no-gutters atc-manage-items-container mx-auto">
+  <at-card class="col-12 p-1" *ngFor="let item of items; let i=index">
+    <at-card-body class="row no-gutters">
+      <div class="col">{{item.name}}</div>
+      <div class="col col-auto">
+        <i class="fa fa-edit atc-icon" (click)="edit(item.id, i)"></i>
+        <i class="fa fa-trash atc-icon" (click)="delete(item.id, i)"></i>
+      </div>
+    </at-card-body>
+  </at-card>
 </div>

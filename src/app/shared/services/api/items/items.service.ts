@@ -24,4 +24,9 @@ export class ItemsService {
   public put(id: string, payload: any): Observable<Item> {
     return this.http.put<Item>(`api/p/${id}`, payload);
   }
+
+  public delete(id: string): Observable<any> {
+    return this.http.delete(`api/p/${id}`);
+  }
+
 }

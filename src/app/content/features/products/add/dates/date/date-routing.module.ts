@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EditItemDateResolver } from '../../services/resolver/edit-item-date.resolver';
 import { ProductAddDateComponent } from './date.component';
+import { ActiveItemDateResolver } from '../../services/resolver/active-item-date.resolver';
 
 const routes: Routes = [
   {
     path: ':id',
-    resolve: { date: EditItemDateResolver },
+    resolve: { date: ActiveItemDateResolver },
     component: ProductAddDateComponent
   }
 ];

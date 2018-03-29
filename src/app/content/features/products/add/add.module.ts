@@ -4,11 +4,11 @@ import { ProductAddRoutingModule } from './add-routing.module';
 import { EditItemService } from './services/provider/edit-item.service';
 import { EditItemResolver } from './services/resolver/edit-item.resolver';
 import { NewItemResolver } from './services/resolver/new-item.resolver';
-import { BlankItemResolver } from './services/resolver/blank-item.resolver';
-import { EditItemDateExdResolver } from './services/resolver/edit-item-date-exd.resolver';
-import { EditItemDateWdsResolver } from './services/resolver/edit-item-date-wds.resolver';
-import { EditItemDateResolver } from './services/resolver/edit-item-date.resolver';
 import { SharedModule } from '../../../../shared/modules/shared.module';
+import { ActiveItemDateResolver } from './services/resolver/active-item-date.resolver';
+import { ActiveItemDateExdResolver } from './services/resolver/active-item-date-exd.resolver';
+import { ActiveItemDateWdsResolver } from './services/resolver/active-item-date-wds.resolver';
+import { ActiveItemResolver } from './services/resolver/active-item.resolver';
 
 @NgModule({
   imports: [
@@ -18,13 +18,13 @@ import { SharedModule } from '../../../../shared/modules/shared.module';
     ProductAddComponent
   ],
   providers: [
-    EditItemDateExdResolver,
-    EditItemDateWdsResolver,
-    EditItemDateResolver,
+    ActiveItemResolver,
+    ActiveItemDateResolver,
+    ActiveItemDateExdResolver,
+    ActiveItemDateWdsResolver,
     EditItemResolver,
     EditItemService,
-    NewItemResolver,
-    BlankItemResolver
+    NewItemResolver
   ]
 })
 export class ProductAddModule { }

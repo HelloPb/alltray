@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { ProductsComponent } from './products.component';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ItemsService } from '../../../shared/services/api/items/items.service';
-import { ItemResolver } from '../../../shared/services/resolver/item/item.resolver';
 import { SharedModule } from '../../../shared/modules/shared.module';
+import { ItemResolver } from '../../../shared/services/resolver/item/item.resolver';
 
 @NgModule({
   imports: [

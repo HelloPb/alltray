@@ -46,7 +46,7 @@ export class ProductAddStockComponent implements OnInit {
 
     this.item = Object.assign(this.item, this.formGroup.value);
 
-    this.router.navigate([`/content/products/add/choose/${this.item.id}`]);
+    this.router.navigate([`/content/products/add/${this.item.id}/choose`]);
 
   }
 
@@ -54,7 +54,7 @@ export class ProductAddStockComponent implements OnInit {
 
     this.item = Object.assign(this.item, this.formGroup.value);
 
-    this.router.navigate([`/content/products/add/dates/${this.item.id}`]);
+    this.router.navigate([`/content/products/add/${this.item.id}/dates`]);
 
   }
 

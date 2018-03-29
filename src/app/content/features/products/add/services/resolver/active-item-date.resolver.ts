@@ -6,7 +6,7 @@ import { ItemsService } from '../../../../../../shared/services/api/items/items.
 import { EditItemService } from '../provider/edit-item.service';
 
 @Injectable()
-export class EditItemDateResolver implements Resolve<Item> {
+export class ActiveItemDateResolver implements Resolve<Item> {
   constructor(private edit: EditItemService, private item: ItemsService, private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Item> {

@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ProductManageResultComponent implements OnInit {
 
-  public items$: Observable<Item[]>;
+  public items: Item[];
 
   constructor(
     private route: ActivatedRoute,
@@ -20,14 +20,25 @@ export class ProductManageResultComponent implements OnInit {
 
   private getItems(params: ParamMap): void {
     const id = params.get('id');
-    this.items$ = this.itemService.search('');
+    this.itemService.search('').subscribe( x => {
+      this.items = x;
+    });
   }
 
-  public next(id: string): void {
-    this.router.navigate([`/content/products/item/${id}`]);
+  public delete(id: string, index: number): void {
+
+    console.log('ddd');
+    this.itemService.delete(id).subscribe( (x) => {
+      this.items.splice(index, 1);
+    });
+  }
+
+  public edit(id: string, index: number): void {
+    this.router.navigate([`/content/products/add/${id}`]);
   }
 
   public ngOnInit(): void {
     this.route.paramMap.subscribe(x => this.getItems(x));
   }
+
 }

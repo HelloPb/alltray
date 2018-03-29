@@ -1,6 +1,6 @@
 @import './../root.scss';
 
-at-card {
+.atc-card {
     display: block;
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -27,7 +27,6 @@ at-card-header {
     padding-right: 0.75rem;
     word-wrap: break-word;
     word-break: break-all;
-    text-overflow: ellipsis;
     overflow: hidden;
     @include at-font-size('head');
 }
@@ -38,4 +37,7 @@ at-card-body {
     @include at-font-size('body');
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
 }

@@ -34,19 +34,19 @@ export class ProductAddDatesComponent implements OnInit {
 
   public editDate(index: string): void {
 
-    this.router.navigate([`/content/products/add/dates/${this.item.id}/date/${index}`]);
+    this.router.navigate([`/content/products/add/${this.item.id}/dates/${index}`]);
 
   }
 
   public back(): void {
 
-    this.router.navigate([`/content/products/add/stock/${this.item.id}`]);
+    this.router.navigate([`/content/products/add/${this.item.id}/stock`]);
 
   }
 
   public next(): void {
 
-    this.router.navigate([`/content/products/add/save/${this.item.id}`]);
+    this.router.navigate([`/content/products/add/${this.item.id}/save`]);
 
   }
 

@@ -57,7 +57,7 @@ export class ProductAddChooseComponent implements OnInit {
 
     this.item = Object.assign(this.item, this.formGroup.value);
 
-    this.router.navigate([`/content/products/add/stock/${this.item.id}`]);
+    this.router.navigate([`/content/products/add/${this.item.id}/stock`]);
 
   }
 
