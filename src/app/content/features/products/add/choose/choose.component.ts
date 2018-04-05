@@ -48,7 +48,8 @@ export class ProductAddChooseComponent implements OnInit {
 
     this.formGroup.patchValue({
       name: item.name,
-      description: item.description
+      description: item.description,
+      category: item.category
     });
 
   }

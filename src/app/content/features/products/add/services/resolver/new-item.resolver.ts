@@ -9,7 +9,6 @@ export class NewItemResolver implements Resolve<Item> {
   constructor(private edit: EditItemService, private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Item> {
-    debugger;
     return this.edit.newItem().take(1).map(item => {
       if (item) {
         this.router.navigate(['/content/products/add/0']);

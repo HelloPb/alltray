@@ -1,0 +1,8 @@
+<div class="row no-gutters">
+  <at-card class="col-12" *ngFor="let c of categories$|async">
+    <at-card-body>
+      <span class="atc-title">{{c.name}}</span>
+      <span class="atc-dim-text">({{c.description}})</span>
+    </at-card-body>
+  </at-card>
+</div>

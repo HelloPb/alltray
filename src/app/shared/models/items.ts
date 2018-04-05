@@ -4,6 +4,7 @@ export class Item {
     id: string;
     name: string;
     description: string;
+    category: string;
     stock: string;
     remainig: string;
     unlimited: boolean;
@@ -15,6 +16,7 @@ export class Item {
         this.id = undefined;
         this.name = '';
         this.description = '';
+        this.category = '';
         this.stock = '';
         this.unlimited = false;
         this.pps = '';
