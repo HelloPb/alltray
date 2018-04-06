@@ -4,6 +4,7 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ItemsService } from '../../../shared/services/api/items/items.service';
 import { SharedModule } from '../../../shared/modules/shared.module';
 import { ItemResolver } from '../../../shared/services/resolver/item/item.resolver';
+import { CategoryService } from '../../../shared/services/api/category/category.service';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { ItemResolver } from '../../../shared/services/resolver/item/item.resolv
   declarations: [ProductsComponent],
   providers: [
     ItemResolver,
-    ItemsService
+    ItemsService,
+    CategoryService
   ]
 })
 export class ProductsModule { }

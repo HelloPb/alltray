@@ -14,38 +14,31 @@ export class ProductCategoryComponent implements OnInit {
 
   private categories$: Observable<Category[]>;
 
-  public formGroup: FormGroup;
-
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private formBuilder: FormBuilder,
     private categoryService: CategoryService) {
-    this.create();
   }
 
-  private create(): void {
+  public add(): void {
+    this.router.navigate([`/content/products/category/add`]);
+  }
 
-    this.formGroup = this.formBuilder.group({
-      name: '',
-      description: ''
+  public edit(id: string): void {
+    this.router.navigate([`/content/products/category/edit/${id}`]);
+  }
+
+  public delete(id: string): void {
+    this.categoryService.delete(id).subscribe(x => {
+      this.getCategories();
     });
-
   }
 
-  public back(): void {
-
-    this.router.navigate([`/content/products/categories`]);
-
-  }
-
-  public save(): void {
-
-  }
-
-  public ngOnInit() {
-
+  private getCategories(): void {
     this.categories$ = this.categoryService.search('');
   }
 
+  public ngOnInit() {
+    this.getCategories();
+  }
 }

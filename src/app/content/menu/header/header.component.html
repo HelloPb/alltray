@@ -34,6 +34,12 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/content/products/category">
+              <i class="fa fa-file-photo-o atc-icon"></i>
+            </a>
+          </li>
+
         </ul>
 
         <ul class="navbar-nav my-2 my-lg-0">
@@ -41,7 +47,7 @@
             <a class="nav-link dropdown-toggle" (click)="expandProfile = !expandProfile">
               Profile
             </a>
-            <div class="dropdown-menu"  [ngClass]="{ 'show': expandProfile }"  (click)="expandProfile = !expandProfile">
+            <div class="dropdown-menu" [ngClass]="{ 'show': expandProfile }" (click)="expandProfile = !expandProfile">
               <a class="dropdown-item">Settings</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item">Logout</a>

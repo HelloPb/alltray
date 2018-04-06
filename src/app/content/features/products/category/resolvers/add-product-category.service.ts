@@ -6,7 +6,7 @@ import { CategoryService } from '../../../../../shared/services/api/category/cat
 
 @Injectable()
 export class AddProductCategoryResover implements Resolve<Category> {
-  constructor(private edit: CategoryService, private router: Router) { }
+  constructor(private router: Router) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Category> {
     return Observable.create(observer => {

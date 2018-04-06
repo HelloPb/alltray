@@ -16,7 +16,7 @@ export class EditProductCategoryResover implements Resolve<Category> {
       if (item) {
         return item;
       } else {
-        this.router.navigate(['/content/products/add']);
+        this.router.navigate(['/content/products/category']);
         return null;
       }
     });

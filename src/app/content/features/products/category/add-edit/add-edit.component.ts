@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from '../../../../../shared/models/category';
+import { Observable } from 'rxjs/Observable';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { CategoryService } from '../../../../../shared/services/api/category/category.service';
 
 @Component({
   selector: 'at-product-category-add-edit',
@@ -7,9 +12,61 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCategoryAddEditComponent implements OnInit {
 
-  constructor() { }
+  private categories$: Observable<Category[]>;
 
-  ngOnInit() {
+  public formGroup: FormGroup;
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private categoryService: CategoryService) {
+    this.create();
   }
 
+  private create(): void {
+    this.formGroup = this.formBuilder.group({
+      id: '',
+      name: '',
+      description: ''
+    });
+  }
+
+  private update(category: Category): void {
+    this.formGroup.patchValue({
+      id: category.id,
+      name: category.name,
+      description: category.description
+    });
+  }
+
+  public cancel(): void {
+    this.gotoList();
+  }
+
+  public save(): void {
+
+    const category: Category = this.formGroup.value;
+
+    if (category.id) {
+      this.categoryService.put(category.id, category).subscribe(x => {
+        this.gotoList();
+      });
+    } else {
+      this.categoryService.post(category).subscribe(x => {
+        this.gotoList();
+      });
+    }
+
+  }
+
+  private gotoList(): void {
+    this.router.navigate([`/content/products/category`]);
+  }
+
+  public ngOnInit() {
+    this.route.data.subscribe((data: { item: Category }) => {
+      this.update(data.item);
+    });
+  }
 }

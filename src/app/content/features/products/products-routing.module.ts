@@ -26,6 +26,10 @@ const routes: Routes = [
       {
         path: 'manage',
         loadChildren: 'app/content/features/products/manage/manage.module#ProductManageExModule'
+      },
+      {
+        path: 'category',
+        loadChildren: 'app/content/features/products/category/category.module#ProductCategoryExModule'
       }
     ]
   }
