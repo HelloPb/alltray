@@ -10,6 +10,10 @@ const routes: Routes = [
       {
         path: 'products',
         loadChildren: 'app/content/features/products/products.module#ProductsExModule'
+      },
+      {
+        path: '',
+        redirectTo: 'products'
       }
     ]
   }

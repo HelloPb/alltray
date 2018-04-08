@@ -30,6 +30,10 @@ const routes: Routes = [
       {
         path: 'category',
         loadChildren: 'app/content/features/products/category/category.module#ProductCategoryExModule'
+      },
+      {
+        path: '',
+        redirectTo: 'home'
       }
     ]
   }

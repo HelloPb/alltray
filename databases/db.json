@@ -3,17 +3,37 @@
     {
       "id": 1,
       "name": "Idli",
-      "description": "Idli from a village machine"
+      "description": "South indian traditional breakfast",
+      "culture": "South Karnataka",
+      "hint": "Breakfast"
     },
     {
+      "id": 2,
       "name": "dosa",
-      "description": "dosa from a village shef",
-      "id": 2
+      "description": "dosa from a village chef",
+      "culture": "South Karnataka",
+      "hint": "Breakfast"
     },
     {
+      "id": 3,
       "name": "Rice",
       "description": "Local rice - Sona masuri",
-      "id": 3
+      "culture": "Global",
+      "hint": "Carbohydrate rich food used mostly by asians"
+    },
+    {
+      "id": 4,
+      "name": "yoga",
+      "description": "ancient yoga practicioner",
+      "culture": "Global",
+      "hint": "Originated in India and practiced wordwide"
+    },
+    {
+      "id": 5,
+      "name": "aurveda",
+      "description": "ancient aurveda practicisioner",
+      "culture": "India",
+      "hint": "Orginated in India and famously used pre indipendence era "
     }
   ],
   "p": [
@@ -989,6 +1009,146 @@
         }
       ],
       "id": 7
+    },
+    {
+      "name": "Puligare",
+      "description": "Made from sona masuri rice ",
+      "category": "Rice",
+      "stock": "10",
+      "unlimited": true,
+      "pps": "1",
+      "nops": "1",
+      "img": "#",
+      "dates": [
+        {
+          "from": "01-05-1944",
+          "to": "01-05-1966",
+          "byWeekDays": true,
+          "byDates": false,
+          "weekDays": {
+            "sun": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "mon": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "tue": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "wed": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "thu": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "fri": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "sat": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ]
+          },
+          "eds": [
+            {
+              "from": "01-05-1982",
+              "to": "01-05-2053",
+              "bhs": [
+                {
+                  "from": {
+                    "h": 9,
+                    "m": 0,
+                    "am": true
+                  },
+                  "to": {
+                    "h": 9,
+                    "m": 0,
+                    "am": true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "createdAt": 1523181601927,
+      "id": 8
     }
   ]
 }

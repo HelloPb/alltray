@@ -26,7 +26,7 @@ server.get('/api/c', function (req, res, next) {
 
     if (req.query.name) {
         c.forEach(element => {
-            if (element.name.indexOf(req.query.name) !== -1) {
+            if (element.name.toLowerCase().indexOf(req.query.name.toLowerCase()) !== -1) {
                 r.push(element);
             }
         });

@@ -20,6 +20,12 @@ h1, h2, h3, h4, h5, h6, p, span, a, div, li, button, input, label {
 }
 
 .atc-icon {
+    @include at-color(2);   
+    font-size: 1.5rem;
+    cursor: pointer; 
+}
+
+.atc-icon-header {
     font-size: 1.5rem;
     cursor: pointer; 
 }

@@ -5,7 +5,7 @@
     <nav class="bt-navbar navbar navbar-expand-lg navbar-dark bg-transparent">
 
       <a class="navbar-brand" routerLink="/content/products/home">
-        <span>Alltray</span>
+        Alltray
       </a>
 
       <button class="navbar-toggler" type="button" (click)="expand = !expand">
@@ -18,25 +18,24 @@
 
           <li class="nav-item">
             <a class="nav-link" routerLink="/content/products/add">
-              <i class="fa fa-plus atc-icon"></i>
+              <i class="fa fa-plus atc-icon-header"></i>
             </a>
-          </li>
-
+          </li> 
           <li class="nav-item">
             <a class="nav-link" routerLink="/content/products/manage">
-              <i class="fa fa-edit atc-icon"></i>
+              <i class="fa fa-edit atc-icon-header"></i>
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" routerLink="/content/products/home">
-              <i class="fa fa-search atc-icon"></i>
+              <i class="fa fa-search atc-icon-header"></i>
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" routerLink="/content/products/category">
-              <i class="fa fa-file-photo-o atc-icon"></i>
+              <i class="fa fa-file-photo-o atc-icon-header"></i>
             </a>
           </li>
 
@@ -45,7 +44,7 @@
         <ul class="navbar-nav my-2 my-lg-0">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" (click)="expandProfile = !expandProfile">
-              Profile
+              <span>Profile</span>
             </a>
             <div class="dropdown-menu" [ngClass]="{ 'show': expandProfile }" (click)="expandProfile = !expandProfile">
               <a class="dropdown-item">Settings</a>

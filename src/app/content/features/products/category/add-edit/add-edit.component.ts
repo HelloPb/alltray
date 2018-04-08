@@ -25,23 +25,33 @@ export class ProductCategoryAddEditComponent implements OnInit {
   }
 
   private create(): void {
+
     this.formGroup = this.formBuilder.group({
       id: '',
       name: '',
-      description: ''
+      description: '',
+      culture: '',
+      hint: ''
     });
+
   }
 
   private update(category: Category): void {
+
     this.formGroup.patchValue({
       id: category.id,
       name: category.name,
-      description: category.description
+      description: category.description,
+      culture: category.culture,
+      hint: category.hint
     });
+
   }
 
   public cancel(): void {
+
     this.gotoList();
+
   }
 
   public save(): void {
@@ -61,12 +71,16 @@ export class ProductCategoryAddEditComponent implements OnInit {
   }
 
   private gotoList(): void {
+
     this.router.navigate([`/content/products/category`]);
+
   }
 
   public ngOnInit() {
+
     this.route.data.subscribe((data: { item: Category }) => {
       this.update(data.item);
     });
+
   }
 }

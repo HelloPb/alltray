@@ -1,11 +1,11 @@
 $border-color:rgba(0, 0, 0, 0.1);
-$primary-color:#301a99;
+$primary-color:#b24242;
 $secondary-color:#007BC3;
 $third-color: whiteSmoke;
 $fourth-color:rgba(0, 0, 0, 0.54);
 $default-color: white;
-$header-font-size: 0.9rem;
-$body-font-size: 0.875rem;
+$primary-font-size: 0.9rem;
+$secondary-font-size: 0.875rem;
 
 @mixin at-box-shadow($type: '') {
     @if $type == 'card' {
@@ -58,9 +58,9 @@ $body-font-size: 0.875rem;
 
 @mixin at-font-size($type: 'body') {
     @if $type == 'header' { 
-        font-size: $header-font-size;
+        font-size: $primary-font-size;
     }     
     @if $type == 'body' { 
-        font-size: $body-font-size;
+        font-size: $secondary-font-size;
     } 
 }

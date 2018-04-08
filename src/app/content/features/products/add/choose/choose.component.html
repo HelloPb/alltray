@@ -1,5 +1,4 @@
 <form [formGroup]="formGroup" novalidate>
-
   <at-card>
     <at-card-body>
       <div class="form-group">
@@ -11,10 +10,10 @@
           <a *ngFor="let c of categories" (click)="selectedCategory(c)" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{c.name}}</h5>
-              <small>South Karnataka</small>
+              <small>{{c.culture}}</small>
             </div>
             <p class="mb-1">{{c.description}}</p>
-            <small>Breakfast item</small>
+            <small>{{c.hint}}</small>
           </a>
         </div>
       </div>
