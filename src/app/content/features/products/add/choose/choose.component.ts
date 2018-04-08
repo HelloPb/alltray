@@ -2,6 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Item } from '../../../../../shared/models/items';
+import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/observable/empty';
+import { Observable } from 'rxjs/Observable';
+
+
+import {
+  debounceTime, distinctUntilChanged, switchMap
+} from 'rxjs/operators';
+
+import { CategoryService } from '../../../../../shared/services/api/category/category.service';
+import { Category } from '../../../../../shared/models/category';
 
 @Component({
   selector: 'at-product-add-choose',
@@ -12,25 +23,16 @@ export class ProductAddChooseComponent implements OnInit {
 
   private item: Item;
   public formGroup: FormGroup;
-  private categories = [
-    { name: 'Fresh Vegitables', value: '1' },
-    { name: 'Groceries', value: '2' },
-    { name: 'Home Food', value: '3' },
-    { name: 'Milk', value: '4' },
-    { name: 'Ayurvadic', value: '5' },
-    { name: 'Plumber', value: '6' },
-    { name: 'Electrician', value: '7' },
-    { name: 'Kumbara', value: '8' },
-    { name: 'Home Cook', value: '9' },
-    { name: 'Achari', value: '10' },
-    { name: 'Ganiga', value: '11' },
-    { name: 'Sherigara', value: '12' }
-  ];
+
+  public categories = [];
+  private skipSearch = false;
+  private searchText$ = new Subject<string>();
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder,
+    private categoryService: CategoryService) {
     this.create();
   }
 
@@ -68,10 +70,42 @@ export class ProductAddChooseComponent implements OnInit {
 
   }
 
+  public selectedCategory(category: Category): void {
+
+    this.categories = [];
+
+    this.skipSearch = true;
+
+    this.formGroup.patchValue({
+      description: category.description,
+      category: category.name
+    });
+  }
+
   public ngOnInit() {
+
     this.route.data.subscribe((data: { item: Item }) => {
       this.item = data.item;
       this.update(this.item);
+    });
+
+    this.searchText$.pipe(
+      debounceTime(500),
+      distinctUntilChanged(),
+      switchMap(text =>
+        this.categoryService.search(text))).subscribe(x => {
+          this.categories = x;
+        });
+
+    this.formGroup.controls['category'].valueChanges.subscribe(x => {
+
+      this.categories = [];
+
+      if (!this.skipSearch) {
+        this.searchText$.next(`name=${x}`);
+      } else {
+        this.skipSearch = false;
+      }
     });
   }
 }

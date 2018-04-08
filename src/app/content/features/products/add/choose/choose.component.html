@@ -5,10 +5,18 @@
       <div class="form-group">
         <input type="text" class="form-control" id="itemName" aria-describedby="itemName" placeholder="Enter item name" formControlName="name">
       </div>
-      <div class="form-group">
-        <select type="text" class="form-control" id="category" aria-describedby="category" formControlName="category">
-          <option *ngFor="let c of categories" [value]="c.value">{{c.name}}</option>
-        </select>
+      <div class="form-group position-relative">
+        <input type="text" class="form-control" id="category" aria-describedby="category" placeholder="search category" formControlName="category">
+        <div class="list-group position-absolute w-100">
+          <a *ngFor="let c of categories" (click)="selectedCategory(c)" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{c.name}}</h5>
+              <small>South Karnataka</small>
+            </div>
+            <p class="mb-1">{{c.description}}</p>
+            <small>Breakfast item</small>
+          </a>
+        </div>
       </div>
       <div class="form-group">
         <textarea class="form-control" rows="4" cols="50" placeholder="Describe your item here" formControlName="description"></textarea>
@@ -19,5 +27,4 @@
       </div>
     </at-card-body>
   </at-card>
-
 </form>

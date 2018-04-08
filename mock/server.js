@@ -18,9 +18,9 @@ server.use((req, res, next) => {
 })
 
 // Add custom routes before JSON Server router
-router.get('/api/c', function (req, res, next) {
+server.get('/api/c', function (req, res, next) {
 
-    const c = mock.db.get('c').value();
+    const c = router.db.get('c').value();
 
     let r = [];
 
