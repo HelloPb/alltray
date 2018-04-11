@@ -5,7 +5,7 @@ import { ActiveItemDateResolver } from '../../services/resolver/active-item-date
 
 const routes: Routes = [
   {
-    path: ':id',
+    path: '',
     resolve: { date: ActiveItemDateResolver },
     component: ProductAddDateComponent
   }

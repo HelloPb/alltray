@@ -64,10 +64,11 @@ export class ProductAddDateComponent implements OnInit {
 
   public ngOnInit() {
 
-    this.route.data.subscribe((data: { date: ItemActiveDate, item: Item }) => {
+    this.route.data.subscribe((data: { date: { date: ItemActiveDate, id: string } }) => {
 
-      this.date = data.date;
-      this.id = data.item.id;
+      this.date = data.date.date;
+
+      this.id = data.date.id;
 
       this.weekDays = _.cloneDeep(this.date.weekDays);
       this.eds = _.cloneDeep(this.date.eds);

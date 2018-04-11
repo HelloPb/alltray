@@ -4,7 +4,7 @@
       <input class="form-control" placeholder="DD-MM-YYYY" [formControl]="date">
     </div>
     <div class="col col-auto">
-      <i class="fa fa-calendar" style="font-size:2.39rem; cursor: pointer;" (click)="toggle.var=!toggle.var;"></i>
+      <i class="fa fa-calendar atc-icon" style="font-size:2.39rem; cursor: pointer;" (click)="toggle.var=!toggle.var;"></i>
     </div>
     <div class="col-12 atc-calendar" [ngClass]="{'d-none': toggle.var==false}">
       <ngb-datepicker #dp [(ngModel)]="model" (ngModelChange)="selectedDate();toggle.var = !toggle.var;"></ngb-datepicker>

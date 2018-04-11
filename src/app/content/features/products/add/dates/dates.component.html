@@ -29,12 +29,14 @@
         <at-exclusive-dates [exds]="date?.eds"></at-exclusive-dates>
 
       </at-card-body>
+
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-outline-warning mr-2" (click)="back()">Back</button>
+        <button type="button" class="btn btn-outline-info" (click)="next()">Next</button>
+      </div>
+
     </at-card>
   </div>
-</div>
-<div class="d-flex justify-content-center">
-  <button type="button" class="btn btn-outline-warning mr-2" (click)="back()">Back</button>
-  <button type="button" class="btn btn-outline-primary" (click)="next()">Next</button>
 </div>
 
 <br>

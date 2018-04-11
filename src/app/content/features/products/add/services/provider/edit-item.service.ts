@@ -111,7 +111,7 @@ export class EditItemService {
 
         self.activeItemDateForEdit = item.dates[+id];
 
-        observer.next(item.dates[+id]);
+        observer.next({ date: item.dates[+id], id: item.id });
 
       } else {
 

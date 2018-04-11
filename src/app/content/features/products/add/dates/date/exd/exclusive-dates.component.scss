@@ -2,7 +2,6 @@
 
 .atc-exd {
     @include at-border();
-    @include at-background(3);
     padding: 6px;
     margin-bottom: 1rem; 
 }

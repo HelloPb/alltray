@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-end mb-2" *ngIf="edit">
-  <button class="btn btn-outline-primary" (click)="addExd()">Add Exclusive Date</button>
+  <button class="btn btn-outline-secondary" (click)="addExd()">Add Exclusive Date</button>
 </div>
 
 <form [formGroup]="formGroup">
@@ -7,7 +7,7 @@
     <div class="row no-gutters atc-exd" *ngFor="let exd of exdsArray.controls; let i=index" [formGroupName]="i">
       <ng-container *ngIf="edit">
         <div class="col-12 d-flex justify-content-end">
-          <button class="btn btn-link" (click)="deleteExd()">delete</button>
+          <button class="btn btn-link text-danger text-uppercase" (click)="deleteExd()">delete</button>
         </div>
         <div class="col-12 form-group">
           <at-calendar [date]="exd.get('from')"></at-calendar>

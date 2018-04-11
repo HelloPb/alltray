@@ -39,7 +39,7 @@
   "p": [
     {
       "name": "idli - retretetet rtrrttrttrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
-      "description": "idli - retretetet rtrrttrttrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+      "description": "South indian traditional breakfast",
       "stock": "1000",
       "unlimited": true,
       "pps": "123",
@@ -173,13 +173,13 @@
           ]
         }
       ],
-      "category": "3",
+      "category": "Idli",
       "id": 1
     },
     {
       "name": "vada - asdasdasdadasdaddadassssssssssssssssssssssssssssssssssssssssssssssssssssssssssasdasdasdadasdaddadassssssssssssssssssssssssssssssssssssssssssssssssssssssssssasdasdasdadasdaddadassssssssssssssssssssssssssssssssssssssssssssssssssssssssssasdasdasdadasdaddadassssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-      "description": "asdasdasdadasdaddadassssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
-      "category": "3",
+      "description": "dosa from a village chef",
+      "category": "dosa",
       "stock": "222",
       "unlimited": true,
       "pps": "12",
