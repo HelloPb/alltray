@@ -1,66 +1,63 @@
-$border-color:rgba(0, 0, 0, 0.1);
-$primary-color:#b24242;
-$secondary-color:#007BC3;
-$third-color: whiteSmoke;
-$fourth-color:rgba(0, 0, 0, 0.54);
+
+// color pallete
+$primary-color:#3f51b5; // #b24242;
+$secondary-color:#007BC3; 
+$dim-color:rgba(0, 0, 0, 0.54);
 $default-color: white;
+
+// font-size
 $primary-font-size: 0.9rem;
 $secondary-font-size: 0.875rem;
 
-@mixin at-box-shadow($type: '') {
-    @if $type == 'card' {
+// border
+$primary-border-color:rgba(0, 0, 0, 0.1);
+
+@mixin ats-box-shadow($type: 'primary') {
+    @if $type == 'primary' {
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.04);
     }
 }
 
-@mixin at-border($type: 'default') {
-    @if $type == 'default' {
-        border: 1px solid $border-color;
+@mixin ats-border($type: 'primary') {
+    @if $type == 'primary' {
+        border: 1px solid $primary-border-color;
         border-radius: 10px;
     }
 }
 
-@mixin at-background($type: 0) {
-    @if $type == 0 { 
-        background-color: $default-color;
-    }    
-    @if $type == 1 { 
+@mixin ats-background($type: 'primary') {
+    @if $type == 'primary' { 
         background-color: $primary-color;
     }    
-    @if $type == 2 { 
-        background-color: $secondary-color;
+    @if $type == 'secondary' { 
+        background-color: $light-color;
     }    
-    @if $type == 3 { 
-        background-color: $third-color;
-    }    
-    @if $type == 4 { 
-        background-color: $fourth-color;
+    @if $type == 'default' { 
+        background-color: $default-color;
     }
 }
 
-@mixin at-color($type: 0) {
-    @if $type == 0 { 
-        color: $default-color;
-    }    
-    @if $type == 1 { 
+@mixin ats-color($type: 'default') {
+
+    @if $type == 'primary' { 
         color: $primary-color;
     }    
-    @if $type == 2 { 
+    @if $type == 'secondary' { 
         color: $secondary-color;
-    }   
-    @if $type == 3 { 
-        color: $third-color;
-    }   
-    @if $type == 4 { 
-        color: $fourth-color;
+    } 
+    @if $type == 'dim' { 
+        color: $dim-color;
+    }
+    @if $type == 'default' { 
+        color: $default-color;
     }
 }
 
-@mixin at-font-size($type: 'body') {
-    @if $type == 'header' { 
+@mixin ats-font-size($type: 'primary') {
+    @if $type == 'primary' { 
         font-size: $primary-font-size;
     }     
-    @if $type == 'body' { 
+    @if $type == 'secondary' { 
         font-size: $secondary-font-size;
     } 
 }

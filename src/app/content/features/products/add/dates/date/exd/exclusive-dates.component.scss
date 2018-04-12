@@ -1,7 +1,7 @@
 @import 'src/assets/css/root.scss';
 
 .atc-exd {
-    @include at-border();
+    @include ats-border('primary');
     padding: 6px;
     margin-bottom: 1rem; 
 }

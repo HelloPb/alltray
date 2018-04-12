@@ -5,6 +5,12 @@
 <form [formGroup]="formGroup">
   <div formArrayName="exdsArray">
     <div class="row no-gutters atc-exd" *ngFor="let exd of exdsArray.controls; let i=index" [formGroupName]="i">
+
+      <div class="col-12 d-flex justify-content-center" *ngIf="!edit">
+        <span>{{exd.value.from}}</span>
+        <span class="ml-4">{{exd.value.to}}</span>
+      </div>
+
       <ng-container *ngIf="edit">
         <div class="col-12 d-flex justify-content-end">
           <button class="btn btn-link text-danger text-uppercase" (click)="deleteExd()">delete</button>
@@ -16,11 +22,6 @@
           <at-calendar [date]="exd.get('to')"></at-calendar>
         </div>
       </ng-container>
-
-      <div class="col-12 d-flex justify-content-center" *ngIf="edit!=true">
-        <span>{{exd.value.from}}</span>
-        <span class="ml-4">{{exd.value.to}}</span>
-      </div>
 
       <div class="col-12">
         <div class="atc-exd-item">

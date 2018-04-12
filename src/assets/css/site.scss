@@ -1,27 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 
+@import "root";
+
 h1, h2, h3, h4, h5, h6, p, span, a, div, li, button, input, label {
     font-family: 'Roboto', sans-serif;
 }
 
-@import "root";
-
 .atc-header {
-    @include at-background(1);  
-    @include at-color(0);
+    @include ats-background('primary');  
+    @include ats-color('default');
     box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
 }
 
 .atc-title {
-    @include at-color(2);   
+    @include ats-color('secondary');   
 }
 
 .atc-dim-text {
-    @include at-color(4);
+    @include ats-color('dim');
 }
 
 .atc-icon {
-    @include at-color(2);   
+    @include ats-color('secondary');   
     font-size: 1.5rem;
     cursor: pointer; 
 }
