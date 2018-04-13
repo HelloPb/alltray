@@ -20,10 +20,10 @@
       "prefix": "at",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "assets/css/overrides/bootstrap.scss",
         "../node_modules/font-awesome/css/font-awesome.css",
         "assets/css/root.scss",
         "assets/css/animate.css",
-        "assets/css/overrides/bootstrap.scss",
         "assets/css/components/card.scss",
         "assets/css/components/calendar.scss",
         "assets/css/reset.scss",

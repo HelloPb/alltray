@@ -2,7 +2,7 @@
 // color pallete
 $primary:#3f51b5; // #b24242;
 $secondary:#007BC3; 
-$dim:rgba(0, 0, 0, 0.54);
+$gray:rgba(0, 0, 0, 0.54);
 $default: white;
 
 // font-size
@@ -18,14 +18,14 @@ $primary-border-color:rgba(0, 0, 0, 0.1);
     }
 }
 
-@mixin ats-border($type: 'primary') {
+@mixin ats-border($type: 'primary', $level: 0) {
     @if $type == 'primary' {
         border: 1px solid $primary-border-color;
         border-radius: 10px;
     }
 }
 
-@mixin ats-background($type: 'primary') {
+@mixin ats-background($type: 'primary', $level: 0) {
     @if $type == 'primary' { 
         background-color: $primary;
     }    
@@ -37,7 +37,7 @@ $primary-border-color:rgba(0, 0, 0, 0.1);
     }
 }
 
-@mixin ats-color($type: 'default') {
+@mixin ats-color($type: 'default', $level: 0) {
 
     @if $type == 'primary' { 
         color: $primary;
@@ -45,8 +45,8 @@ $primary-border-color:rgba(0, 0, 0, 0.1);
     @if $type == 'secondary' { 
         color: $secondary;
     } 
-    @if $type == 'dim' { 
-        color: $dim;
+    @if $type == 'gray' { 
+        color: $gray;
     }
     @if $type == 'default' { 
         color: $default;

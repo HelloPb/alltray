@@ -7,26 +7,25 @@ h1, h2, h3, h4, h5, h6, p, span, a, div, li, button, input, label {
 }
 
 .atc-header {
-    @include ats-background('primary');  
-    @include ats-color('default');
+    @include ats-background('primary');
     box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.atc-header-icons {
+    font-size: 1.5rem;
+    cursor: pointer; 
 }
 
 .atc-title {
     @include ats-color('secondary');   
 }
 
-.atc-dim-text {
-    @include ats-color('dim');
+.atc-gray {
+    @include ats-color('gray');
 }
 
 .atc-icon {
     @include ats-color('secondary');   
-    font-size: 1.5rem;
-    cursor: pointer; 
-}
-
-.atc-icon-header {
     font-size: 1.5rem;
     cursor: pointer; 
 }
@@ -39,25 +38,8 @@ h1, h2, h3, h4, h5, h6, p, span, a, div, li, button, input, label {
     color: #991a1a;
 }
 
-.atc-small-img {
+.atc-img-sm {
     height: 2.5rem;
     width: auto;
     border-radius: 1.25rem;
-}
-
-.atc-card-padding {
-    padding: 8px!important;
-}
-
-.atc-collapsable {
-    transition: height 3s;
-}
-
-.atc-expanded {
-    height: auto;
-    max-height: 1000px;
-}
-
-.atc-collapsed {
-    height: 0px; 
 }
