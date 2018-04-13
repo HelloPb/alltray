@@ -1,42 +1,61 @@
-<div class="row no-gutters">
-  <div class="col-12 mb-4" *ngFor="let date of item.dates; let i=index;">
-    <at-card class="atc-dates pb-1">
-      <at-card-header class="d-flex justify-content-center">
-        <div>
-          <i class="fa fa-trash atc-icon off" (click)="deleteDate(i)"></i>
-          <span class="mx-1">{{date.from}}</span>
-          <span class="mx-1">{{date.to}}</span>
-          <i class="fa fa-edit atc-icon on" (click)="editDate(i)"></i>
-        </div>
-      </at-card-header>
-      <at-card-body>
+<div class="bg-white">
 
-        <br>
-        <label class="form-check-label" for="byWeekDays">
-          By week days
-        </label>
-        <at-week-days [weekDays]="date?.weekDays"></at-week-days>
+  <div class="d-flex justify-content-center py-2 bg-primary">
+    <button class="btn btn-outline-light bg-transparent" (click)="addDate()">Add More Business Date</button>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-12 mb-2" *ngFor="let date of item.dates; let i=index;">
+      <at-card class="atc-dates pb-1" #toggle="var" var>
+        <at-card-header class="row no-gutters">
+          <div class="col col-auto">
+            <div class="d-block">
+              <i class="fa fa-trash atc-icon off" (click)="deleteDate(i)"></i>
+            </div>
+            <div class="d-block">
+              <i class="fa fa-edit atc-icon on" (click)="editDate(i)"></i>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center" (click)="toggle.var=!toggle.var">
+            <div>
+              <div class="d-block">
+                <label class="m-0 w-37p">From: </label>
+                <span class="mx-1">{{date.from}}</span>
+              </div>
+              <div class="d-block">
+                <label class="m-0 w-37p text-right">To: </label>
+                <span class="mx-1">{{date.to}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="col col-auto" (click)="toggle.var=!toggle.var">
+            <i class="fa fa-angle-down atc-icon" *ngIf="toggle.var===false"></i>
+            <i class="fa fa-angle-up atc-icon" *ngIf="toggle.var===true"></i>
+          </div>
+        </at-card-header>
 
-        <br>
+        <at-card-body class="animated fadeInUp" *ngIf="toggle.var===true">
 
-        <label class="form-check-label" for="byDates">
-          By exclusive dates
-        </label>
-        <at-exclusive-dates [exds]="date?.eds"></at-exclusive-dates>
+          <br>
+          <label class="form-check-label" for="byWeekDays">
+            By week days
+          </label>
+          <at-week-days [weekDays]="date?.weekDays"></at-week-days>
 
-      </at-card-body>
+          <br>
 
-      <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-outline-warning mr-2" (click)="back()">Back</button>
-        <button type="button" class="btn btn-outline-info" (click)="next()">Next</button>
-      </div>
+          <label class="form-check-label" for="byDates">
+            By exclusive dates
+          </label>
+          <at-exclusive-dates [exds]="date?.eds"></at-exclusive-dates>
 
-    </at-card>
+        </at-card-body>
+
+      </at-card>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center bg-white p-2">
+    <button type="button" class="btn btn-outline-warning mr-2" (click)="back()">Back</button>
+    <button type="button" class="btn btn-outline-info" (click)="next()">Next</button>
   </div>
 </div>
-
-<div class="d-flex justify-content-center">
-  <button class="btn btn-block btn-outline-primary mb-2" (click)="addDate()">Add More Business Date</button>
-</div>
-
-<br>

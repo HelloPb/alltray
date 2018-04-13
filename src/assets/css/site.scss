@@ -48,3 +48,16 @@ h1, h2, h3, h4, h5, h6, p, span, a, div, li, button, input, label {
 .atc-card-padding {
     padding: 8px!important;
 }
+
+.atc-collapsable {
+    transition: height 3s;
+}
+
+.atc-expanded {
+    height: auto;
+    max-height: 1000px;
+}
+
+.atc-collapsed {
+    height: 0px; 
+}

@@ -1,5 +1,5 @@
 
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Directive, Input } from '@angular/core';
 
@@ -8,8 +8,16 @@ import { Directive, Input } from '@angular/core';
   selector: '[var]',
   exportAs: 'var'
 })
-export class VarDirective {
-  @Input() var: any;
+export class VarDirective implements OnInit {
+
+  @Input() var = false;
+
+  constructor() { }
+
+  ngOnInit() {
+    this.var = false;
+  }
+
 }
 
 @NgModule({

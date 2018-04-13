@@ -52,13 +52,13 @@ export class ProductAddDateComponent implements OnInit {
     this.date = Object.assign(this.date, this.formGroup.value);
     this.date.weekDays = this.weekDays;
     this.date.eds = this.eds;
-    this.router.navigate([`/content/products/add/dates/${this.id}`]);
+    this.router.navigate([`/content/products/add/${this.id}/dates`]);
 
   }
 
   public discard(): void {
 
-    this.router.navigate([`/content/products/add/dates/${this.id}`]);
+    this.router.navigate([`/content/products/add/${this.id}/dates`]);
 
   }
 
