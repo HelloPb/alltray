@@ -1,8 +1,9 @@
 <div class="bg-white">
 
-  <div class="d-flex justify-content-center py-2 bg-primary">
-    <button class="btn btn-outline-light bg-transparent" (click)="addDate()">Add More Business Date</button>
+  <div class="d-flex justify-content-center p-2">
+    <button class="btn btn-block btn-outline-info" (click)="addDate()">Add More Business Date</button>
   </div>
+
   <div class="row no-gutters">
     <div class="col-12 mb-2" *ngFor="let date of item.dates; let i=index;">
       <at-card class="atc-dates pb-1" #toggle="var" var>
@@ -56,6 +57,6 @@
 
   <div class="d-flex justify-content-center bg-white p-2">
     <button type="button" class="btn btn-outline-warning mr-2" (click)="back()">Back</button>
-    <button type="button" class="btn btn-outline-info" (click)="next()">Next</button>
+    <button type="button" class="btn btn-outline-info btn-block" (click)="next()">Next</button>
   </div>
 </div>

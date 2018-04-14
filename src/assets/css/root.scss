@@ -4,10 +4,8 @@
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
-// // color pallete
-// $primary:#3f51b5; // #b24242;
+// color swatches
 // $secondary:#007BC3; 
-// $gray:rgba(0, 0, 0, 0.54);
 $default: white;
 
 // font-size
@@ -36,6 +34,12 @@ $primary-border-color:rgba(0, 0, 0, 0.1);
     }    
     @if $type == 'secondary' { 
         background-color: theme-color-level(secondary);
+    }     
+    @if $type == 'success' { 
+        background-color: theme-color-level(success);
+    }     
+    @if $type == 'warning' { 
+        background-color: theme-color-level(warning);
     }    
     @if $type == 'default' { 
         background-color: $default;
@@ -49,9 +53,12 @@ $primary-border-color:rgba(0, 0, 0, 0.1);
     }    
     @if $type == 'secondary' { 
         color: theme-color-level(secondary);
-    } 
-    @if $type == 'gray' { 
-        color: theme-color-level(light);
+    }     
+    @if $type == 'success' { 
+        color: theme-color-level(success);
+    }     
+    @if $type == 'warning' { 
+        color: theme-color-level(warning);
     }
     @if $type == 'default' { 
         color: $default;
