@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { HHMM } from '../../models/bhs';
@@ -6,7 +6,8 @@ import { HHMM } from '../../models/bhs';
 @Component({
   selector: 'at-hour',
   templateUrl: './hour.component.html',
-  styleUrls: ['./hour.component.css']
+  styleUrls: ['./hour.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HourComponent implements OnInit, OnChanges {
 

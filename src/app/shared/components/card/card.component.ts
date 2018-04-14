@@ -2,7 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'at-card',
-  templateUrl: './card.component.html'
+  templateUrl: './card.component.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class CardComponent implements OnInit {
 

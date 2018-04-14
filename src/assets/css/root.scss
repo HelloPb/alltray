@@ -1,8 +1,13 @@
 
-// color pallete
-$primary:#3f51b5; // #b24242;
-$secondary:#007BC3; 
-$gray:rgba(0, 0, 0, 0.54);
+@import "src/assets/css/overrides/custom.scss";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// // color pallete
+// $primary:#3f51b5; // #b24242;
+// $secondary:#007BC3; 
+// $gray:rgba(0, 0, 0, 0.54);
 $default: white;
 
 // font-size
@@ -27,10 +32,10 @@ $primary-border-color:rgba(0, 0, 0, 0.1);
 
 @mixin ats-background($type: 'primary', $level: 0) {
     @if $type == 'primary' { 
-        background-color: $primary;
+        background-color: theme-color(primary);
     }    
     @if $type == 'secondary' { 
-        background-color: $light-color;
+        background-color: theme-color-level(secondary);
     }    
     @if $type == 'default' { 
         background-color: $default;
@@ -40,13 +45,13 @@ $primary-border-color:rgba(0, 0, 0, 0.1);
 @mixin ats-color($type: 'default', $level: 0) {
 
     @if $type == 'primary' { 
-        color: $primary;
+        color: theme-color-level(primary);
     }    
     @if $type == 'secondary' { 
-        color: $secondary;
+        color: theme-color-level(secondary);
     } 
     @if $type == 'gray' { 
-        color: $gray;
+        color: theme-color-level(light);
     }
     @if $type == 'default' { 
         color: $default;
