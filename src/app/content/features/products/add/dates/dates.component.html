@@ -37,14 +37,14 @@
         <at-card-body class="animated fadeInUp" *ngIf="toggle.var===true">
 
           <br>
-          <label class="form-check-label" for="byWeekDays">
+          <label class="form-check-label atc-fs-accent" for="byWeekDays">
             By week days
           </label>
           <at-week-days [weekDays]="date?.weekDays"></at-week-days>
 
           <br>
 
-          <label class="form-check-label" for="byDates">
+          <label class="form-check-label atc-fs-accent" for="byDates">
             By exclusive dates
           </label>
           <at-exclusive-dates [exds]="date?.eds"></at-exclusive-dates>

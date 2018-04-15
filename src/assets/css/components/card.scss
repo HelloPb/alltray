@@ -28,13 +28,13 @@ at-card-header {
     word-wrap: break-word;
     word-break: break-all;
     overflow: hidden;
-    @include ats-font-size('primary');
+    @include ats-fs('primary');
 }
 
 at-card-body {
     height: auto;
     display: block;
-    @include ats-font-size('secondary');
+    @include ats-fs('secondary');
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     word-wrap: break-word;

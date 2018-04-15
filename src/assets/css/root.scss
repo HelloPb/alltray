@@ -5,12 +5,12 @@
 @import "node_modules/bootstrap/scss/mixins";
 
 // color swatches
-// $secondary:#007BC3; 
 $default: white;
 
 // font-size
-$primary-font-size: 0.9rem;
-$secondary-font-size: 0.875rem;
+$ats-fs-primary: 0.9rem;
+$ats-fs-secondary: 0.875rem;
+$ats-fs-accent: 1rem;
 
 // border
 $primary-border-color:rgba(0, 0, 0, 0.1);
@@ -28,7 +28,7 @@ $primary-border-color:rgba(0, 0, 0, 0.1);
     }
 }
 
-@mixin ats-background($type: 'primary', $level: 0) {
+@mixin ats-bg($type: 'primary', $level: 0) {
     @if $type == 'primary' { 
         background-color: theme-color(primary);
     }    
@@ -65,11 +65,15 @@ $primary-border-color:rgba(0, 0, 0, 0.1);
     }
 }
 
-@mixin ats-font-size($type: 'primary') {
+@mixin ats-fs($type: 'primary') {
     @if $type == 'primary' { 
-        font-size: $primary-font-size;
+        font-size: $ats-fs-primary;
     }     
     @if $type == 'secondary' { 
-        font-size: $secondary-font-size;
+        font-size: $ats-fs-secondary;
+    }     
+    @if $type == 'accent' { 
+        font-size: $ats-fs-accent;
+        font-weight: bold;
     } 
 }
