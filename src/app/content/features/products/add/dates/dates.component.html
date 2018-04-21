@@ -9,21 +9,17 @@
       <at-card class="atc-dates pb-1" #toggle="var" var>
         <at-card-header class="row no-gutters">
           <div class="col col-auto">
-            <div class="d-block">
-              <i class="fa fa-trash atc-icon off" (click)="deleteDate(i)"></i>
-            </div>
-            <div class="d-block">
-              <i class="fa fa-edit atc-icon on" (click)="editDate(i)"></i>
-            </div>
+              <i class="fa fa-trash atc-icon off d-block" (click)="deleteDate(i)"></i>
+              <i class="fa fa-edit atc-icon on d-block" (click)="editDate(i)"></i>
           </div>
           <div class="col d-flex justify-content-center" (click)="toggle.var=!toggle.var">
             <div>
               <div class="d-block">
-                <label class="m-0 w-37p">From: </label>
+                <label class="m-0">From: </label>
                 <span class="mx-1">{{date.from}}</span>
               </div>
               <div class="d-block">
-                <label class="m-0 w-37p text-right">To: </label>
+                <label class="m-0 text-right">To: </label>
                 <span class="mx-1">{{date.to}}</span>
               </div>
             </div>
@@ -38,14 +34,14 @@
 
           <br>
           <label class="form-check-label atc-fs-accent" for="byWeekDays">
-            By week days
+            Hours
           </label>
           <at-week-days [weekDays]="date?.weekDays"></at-week-days>
 
           <br>
 
           <label class="form-check-label atc-fs-accent" for="byDates">
-            By exclusive dates
+            Special Days
           </label>
           <at-exclusive-dates [exds]="date?.eds"></at-exclusive-dates>
 
@@ -56,7 +52,7 @@
   </div>
 
   <div class="d-flex justify-content-center bg-white p-2">
-    <button type="button" class="btn btn-outline-danger mr-2" (click)="back()">Back</button>
+    <button type="button" class="btn btn-outline-info mr-2" (click)="back()">Back</button>
     <button type="button" class="btn btn-outline-success btn-block" (click)="next()">Next</button>
   </div>
 </div>

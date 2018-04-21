@@ -1,23 +1,73 @@
 <ng-container *ngIf="weekDays">
-  <div class="atc-week-days ">
-    <at-bh [bhs]="weekDays.sun" label="Sunday"></at-bh>
-  </div>
-  <div class="atc-week-days">
-    <at-bh [bhs]="weekDays.mon" label="Monday"></at-bh>
-  </div>
-  <div class="atc-week-days">
-    <at-bh [bhs]="weekDays.tue" label="Tuesday"></at-bh>
-  </div>
-  <div class="atc-week-days">
-    <at-bh [bhs]="weekDays.wed" label="Wednesday"></at-bh>
-  </div>
-  <div class="atc-week-days">
-    <at-bh [bhs]="weekDays.thu" label="Thursday"></at-bh>
-  </div>
-  <div class="atc-week-days">
-    <at-bh [bhs]="weekDays.fri" label="Friday"></at-bh>
-  </div>
-  <div class="atc-week-days mb-0">
-    <at-bh [bhs]="weekDays.sat" label="Saturday"></at-bh>
-  </div>
+  <ng-container *ngIf="edit==true">
+    <div class="atc-week-days ">
+      <at-bh [bhs]="weekDays.sun" label="Sunday"></at-bh>
+    </div>
+    <div class="atc-week-days">
+      <at-bh [bhs]="weekDays.mon" label="Monday"></at-bh>
+    </div>
+    <div class="atc-week-days">
+      <at-bh [bhs]="weekDays.tue" label="Tuesday"></at-bh>
+    </div>
+    <div class="atc-week-days">
+      <at-bh [bhs]="weekDays.wed" label="Wednesday"></at-bh>
+    </div>
+    <div class="atc-week-days">
+      <at-bh [bhs]="weekDays.thu" label="Thursday"></at-bh>
+    </div>
+    <div class="atc-week-days">
+      <at-bh [bhs]="weekDays.fri" label="Friday"></at-bh>
+    </div>
+    <div class="atc-week-days mb-0">
+      <at-bh [bhs]="weekDays.sat" label="Saturday"></at-bh>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="edit==false">
+    <table class="mx-auto">
+      <tbody>
+        <tr>
+          <td class="align-baseline pr-3">Sunday</td>
+          <td>
+            <span class="d-block" *ngFor="let bh of weekDays.sun">{{bh.from.h}}:{{bh.from.m}} - {{bh.to.h}}:{{bh.to.m}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-baseline pr-3">Monday</td>
+          <td>
+            <span class="d-block" *ngFor="let bh of weekDays.mon">{{bh.from.h}}:{{bh.from.m}} - {{bh.to.h}}:{{bh.to.m}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-baseline pr-3">Tuesday</td>
+          <td>
+            <span class="d-block" *ngFor="let bh of weekDays.tue">{{bh.from.h}}:{{bh.from.m}} - {{bh.to.h}}:{{bh.to.m}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-baseline pr-3">Wednesday</td>
+          <td>
+            <span class="d-block" *ngFor="let bh of weekDays.wed">{{bh.from.h}}:{{bh.from.m}} - {{bh.to.h}}:{{bh.to.m}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-baseline pr-3">Thursday</td>
+          <td>
+            <span class="d-block" *ngFor="let bh of weekDays.thu">{{bh.from.h}}:{{bh.from.m}} - {{bh.to.h}}:{{bh.to.m}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-baseline pr-3">Friday</td>
+          <td>
+            <span class="d-block" *ngFor="let bh of weekDays.fri">{{bh.from.h}}:{{bh.from.m}} - {{bh.to.h}}:{{bh.to.m}}</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="align-baseline pr-3">Saturday</td>
+          <td>
+            <span class="d-block" *ngFor="let bh of weekDays.sat">{{bh.from.h}}:{{bh.from.m}} - {{bh.to.h}}:{{bh.to.m}}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
 </ng-container>

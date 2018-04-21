@@ -1,24 +1,40 @@
-<div class="d-flex justify-content-end mb-2">
-  <button class="btn btn-outline-secondary" (click)="addExd()">Add</button>
-</div>
+<ng-container *ngIf="edit==true">
+  <div class="d-flex justify-content-end mb-2">
+    <button class="btn btn-outline-primary" (click)="addExd()">Add</button>
+  </div>
+  <form [formGroup]="formGroup">
+    <div formArrayName="exdsArray">
+      <div class="row no-gutters" *ngFor="let exd of exdsArray.controls; let i=index" [formGroupName]="i">
+        <div class="col-12 ">
+          <button class="btn btn-link px-0 text-danger text-uppercase" (click)="deleteExd()">delete</button>
+        </div>
+        <div class="col-12 form-group">
+          <at-calendar [date]="exd.get('from')"></at-calendar>
+        </div>
+        <div class="col-12 form-group">
+          <at-calendar [date]="exd.get('to')"></at-calendar>
+        </div>
 
-<form [formGroup]="formGroup">
-  <div formArrayName="exdsArray">
-    <div class="row no-gutters" *ngFor="let exd of exdsArray.controls; let i=index" [formGroupName]="i">
+        <div class="col-12 atc-exd-item">
+          <at-bh [bhs]="exds[i].bhs" label="Hours"></at-bh>
+        </div>
+      </div>
+    </div>
+  </form>
+</ng-container>
 
-      <div class="col-12 d-flex justify-content-end">
-        <button class="btn btn-link px-0 text-danger text-uppercase" (click)="deleteExd()">delete</button>
-      </div>
-      <div class="col-12 form-group">
-        <at-calendar [date]="exd.get('from')"></at-calendar>
-      </div>
-      <div class="col-12 form-group">
-        <at-calendar [date]="exd.get('to')"></at-calendar>
-      </div>
-
-      <div class="col-12 atc-exd-item">
-        <at-bh [bhs]="exds[i].bhs" label="Open Hours"></at-bh>
+<ng-container *ngIf="edit==false">
+  <div class="d-flex justify-content-center" *ngFor="let dt of exds">
+    <div>
+      (<label>{{dt.from}}</label>) - (<label>{{dt.to}}</label>)
+      <div class="row no-gutters">
+        <div class="col text-right pr-3">
+          <span>hours</span>
+        </div>
+        <div class="col">
+          <span class="d-block" *ngFor="let bh of dt.bhs">{{bh.from.h}}:{{bh.from.m}} - {{bh.to.h}}:{{bh.to.m}}</span>
+        </div>
       </div>
     </div>
   </div>
-</form>
+</ng-container>

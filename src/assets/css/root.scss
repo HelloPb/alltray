@@ -64,5 +64,6 @@
     @if $type == 'dark' { 
         font-size: $ats-fs-dark;
         font-weight: bold;
+        line-height: $ats-fs-dark;
     } 
 }

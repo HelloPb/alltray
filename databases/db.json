@@ -1149,6 +1149,146 @@
       ],
       "createdAt": 1524292260026,
       "id": 8
+    },
+    {
+      "name": "",
+      "description": "",
+      "category": "",
+      "stock": "",
+      "unlimited": false,
+      "pps": "",
+      "nops": "",
+      "img": "#",
+      "dates": [
+        {
+          "from": "01-05-1944",
+          "to": "01-05-1966",
+          "byWeekDays": true,
+          "byDates": false,
+          "weekDays": {
+            "sun": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "mon": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "tue": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "wed": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "thu": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "fri": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ],
+            "sat": [
+              {
+                "from": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                },
+                "to": {
+                  "h": 9,
+                  "m": 0,
+                  "am": true
+                }
+              }
+            ]
+          },
+          "eds": [
+            {
+              "from": "01-05-1982",
+              "to": "01-05-2053",
+              "bhs": [
+                {
+                  "from": {
+                    "h": 9,
+                    "m": 0,
+                    "am": true
+                  },
+                  "to": {
+                    "h": 9,
+                    "m": 0,
+                    "am": true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "createdAt": 1524309187607,
+      "id": 9
     }
   ]
 }

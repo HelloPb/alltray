@@ -1,5 +1,7 @@
 <at-card class="pt-2 mb-4">
+
   <at-card-body>
+
     <form [formGroup]="formGroup" novalidate>
 
       <div class="form-group">
@@ -18,8 +20,8 @@
         </label>
       </div>
 
-      <at-week-days [weekDays]="weekDays"></at-week-days>
-      
+      <at-week-days [weekDays]="weekDays" [edit]="true"></at-week-days>
+
       <div style="height: 2rem">&nbsp;</div>
       <div class="form-check mb-4">
         <input class="form-check-input" type="checkbox" formControlName="byDates">
@@ -28,16 +30,21 @@
         </label>
       </div>
 
-      <at-exclusive-dates [exds]="eds"></at-exclusive-dates>
-   
+      <at-exclusive-dates [exds]="eds" [edit]="true"></at-exclusive-dates>
+
       <br>
+      <br>
+      <br>
+
+      <hr class="bg-warning">
 
       <div class="d-flex justify-content-center">
         <button type="button" class="btn btn-outline-danger mb-3 mr-2" (click)="discard()">Discard</button>
-        <button type="button" class="btn btn-outline-info btn-block mb-3" (click)="update()">Update</button>
+        <button type="button" class="btn btn-outline-success btn-block mb-3" (click)="update()">Update</button>
       </div>
 
     </form>
 
   </at-card-body>
+
 </at-card>
