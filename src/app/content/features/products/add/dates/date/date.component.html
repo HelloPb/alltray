@@ -14,26 +14,22 @@
       <div class="form-check mb-4">
         <input class="form-check-input" type="checkbox" formControlName="byWeekDays">
         <label class="form-check-label atc-fs-accent" for="byWeekDays">
-          By week days
+          Hours
         </label>
       </div>
 
-      <div class="mx-auto" style="max-width: 270px;">
-        <at-week-days [weekDays]="weekDays" [edit]="true"></at-week-days>
-      </div>
-
+      <at-week-days [weekDays]="weekDays"></at-week-days>
+      
       <div style="height: 2rem">&nbsp;</div>
       <div class="form-check mb-4">
         <input class="form-check-input" type="checkbox" formControlName="byDates">
         <label class="form-check-label atc-fs-accent" for="byDates">
-          By exclusive dates
+          Special Dates
         </label>
       </div>
 
-      <div class="mx-auto" style="max-width: 260px;">
-        <at-exclusive-dates [exds]="eds" [edit]="true"></at-exclusive-dates>
-      </div>
-
+      <at-exclusive-dates [exds]="eds"></at-exclusive-dates>
+   
       <br>
 
       <div class="d-flex justify-content-center">
@@ -42,5 +38,6 @@
       </div>
 
     </form>
+
   </at-card-body>
 </at-card>

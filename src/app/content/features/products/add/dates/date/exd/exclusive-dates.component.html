@@ -1,33 +1,23 @@
-<div class="d-flex justify-content-end mb-2" *ngIf="edit">
-  <button class="btn btn-outline-secondary" (click)="addExd()">Add Exclusive Date</button>
+<div class="d-flex justify-content-end mb-2">
+  <button class="btn btn-outline-secondary" (click)="addExd()">Add</button>
 </div>
 
 <form [formGroup]="formGroup">
   <div formArrayName="exdsArray">
-    <div class="row no-gutters atc-exd" *ngFor="let exd of exdsArray.controls; let i=index" [formGroupName]="i">
+    <div class="row no-gutters" *ngFor="let exd of exdsArray.controls; let i=index" [formGroupName]="i">
 
-      <div class="col-12 d-flex justify-content-center" *ngIf="!edit">
-        <span>{{exd.value.from}}</span>
-        <span class="ml-4">{{exd.value.to}}</span>
+      <div class="col-12 d-flex justify-content-end">
+        <button class="btn btn-link px-0 text-danger text-uppercase" (click)="deleteExd()">delete</button>
+      </div>
+      <div class="col-12 form-group">
+        <at-calendar [date]="exd.get('from')"></at-calendar>
+      </div>
+      <div class="col-12 form-group">
+        <at-calendar [date]="exd.get('to')"></at-calendar>
       </div>
 
-      <ng-container *ngIf="edit">
-        <div class="col-12 d-flex justify-content-end">
-          <button class="btn btn-link text-danger text-uppercase" (click)="deleteExd()">delete</button>
-        </div>
-        <div class="col-12 form-group">
-          <at-calendar [date]="exd.get('from')"></at-calendar>
-        </div>
-        <div class="col-12 form-group">
-          <at-calendar [date]="exd.get('to')"></at-calendar>
-        </div>
-      </ng-container>
-
-      <div class="col-12">
-        <div class="atc-exd-item">
-          <span class="mt-3 mb-1">Open Hours</span>
-          <at-bh [bhs]="exds[i].bhs" [edit]="edit"></at-bh>
-        </div>
+      <div class="col-12 atc-exd-item">
+        <at-bh [bhs]="exds[i].bhs" label="Open Hours"></at-bh>
       </div>
     </div>
   </div>

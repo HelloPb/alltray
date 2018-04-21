@@ -1,16 +1,17 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { Bhs } from '../../../../../../../shared/models/bhs';
 
 @Component({
   selector: 'at-bh',
   templateUrl: './bh.component.html',
-  styleUrls: ['./bh.component.scss']
+  styleUrls: ['./bh.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BhComponent implements OnInit {
 
   @Input() bhs: Bhs[] = [];
-  @Input() edit = false;
+  @Input() label = undefined;
 
   constructor() {
   }
