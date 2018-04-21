@@ -1,19 +1,8 @@
 
-@import "src/assets/css/overrides/custom.scss";
+@import "src/assets/css/theme.scss";
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
-
-// color swatches
-$default: white;
-
-// font-size
-$ats-fs-primary: 0.9rem;
-$ats-fs-secondary: 0.875rem;
-$ats-fs-accent: 1rem;
-
-// border
-$primary-border-color:rgba(0, 0, 0, 0.1);
 
 @mixin ats-box-shadow($type: 'primary') {
     @if $type == 'primary' {
@@ -23,7 +12,7 @@ $primary-border-color:rgba(0, 0, 0, 0.1);
 
 @mixin ats-border($type: 'primary', $level: 0) {
     @if $type == 'primary' {
-        border: 1px solid $primary-border-color;
+        border: 1px solid $primary-border;
         border-radius: 10px;
     }
 }
@@ -72,8 +61,8 @@ $primary-border-color:rgba(0, 0, 0, 0.1);
     @if $type == 'secondary' { 
         font-size: $ats-fs-secondary;
     }     
-    @if $type == 'accent' { 
-        font-size: $ats-fs-accent;
+    @if $type == 'dark' { 
+        font-size: $ats-fs-dark;
         font-weight: bold;
     } 
 }

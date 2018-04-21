@@ -1,40 +1,35 @@
-<div class="atc-bh">
-  <div class="row no-gutters py-2" *ngFor="let bh of bhs; let i=index" #expand="var" var="0">
-    <ng-container *ngIf="edit">
-      <div class="col-12" *ngIf="expand.var==1">
-        <div class="row no-gutters">
-          <div class="col d-flex align-items-center">
-            <at-hour [hhmm]="bh.from"></at-hour>
-            <span style="font-size: 0.8rem">AM</span>
-          </div>
-          <div class="col d-flex align-items-center mx-2">
-            <at-hour [hhmm]="bh.to"></at-hour>
-            <span style="font-size: 0.8rem">AM</span>
-          </div>
-          <div class="col col-auto d-flex align-items-center">
-            <i class="fa fa-check atc-icon on" (click)="expand.var=0"></i>
-          </div>
+<div class="row no-gutters py-2" *ngFor="let bh of bhs; let i=index" #expand="var" var="0">
+  <ng-container *ngIf="edit">
+    <div class="col-12" *ngIf="expand.var==1">
+      <div class="row no-gutters">
+        <div class="col d-flex align-items-center">
+          <at-hour [hhmm]="bh.from"></at-hour>
+          <span style="font-size: 0.8rem">AM</span>
+        </div>
+        <div class="col d-flex align-items-center mx-2">
+          <at-hour [hhmm]="bh.to"></at-hour>
+          <span style="font-size: 0.8rem">AM</span>
+        </div>
+        <div class="col col-auto d-flex align-items-center">
+          <i class="fa fa-check atc-icon on" (click)="expand.var=0"></i>
         </div>
       </div>
-    </ng-container>
-
-    <div class="col-12 d-flex align-content-center" *ngIf="expand.var==0">
-      <div class="d-flex align-items-center">
-
-        <i class="fa fa-trash atc-icon off" (click)="deleteBh(i)" *ngIf="edit"></i>
-
-        <span class="mx-3">
-          <span>{{bh.from.h}}:{{bh.from.m}} AM</span>
-          <span class="mx-1">--</span>
-          <span>{{bh.to.h}}:{{bh.to.m}} AM</span>
-        </span>
-
-        <i class="fa fa-edit atc-icon on" (click)="expand.var=1" *ngIf="edit"></i>
-      </div>
-
     </div>
+  </ng-container>
+
+  <div class="col-12 d-flex align-items-center justify-content-between" *ngIf="expand.var==0">
+
+    <i class="fa fa-trash atc-icon off" (click)="deleteBh(i)" *ngIf="edit"></i>
+
+    <div class="mx-3">
+      <span>{{bh.from.h}}:{{bh.from.m}} AM</span>
+      <span class="mx-1">--</span>
+      <span>{{bh.to.h}}:{{bh.to.m}} AM</span>
+    </div>
+
+    <i class="fa fa-edit atc-icon on" (click)="expand.var=1" *ngIf="edit"></i>
   </div>
-  <div class="d-flex justify-content-end" *ngIf="edit">
-    <i class="fa fa-plus atc-icon off" (click)="addBh()"></i>
-  </div>
+</div>
+<div class="d-flex justify-content-center" *ngIf="edit">
+  <i class="fa fa-plus atc-icon off" (click)="addBh()"></i>
 </div>

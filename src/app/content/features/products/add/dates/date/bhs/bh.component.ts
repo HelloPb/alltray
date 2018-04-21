@@ -5,7 +5,7 @@ import { Bhs } from '../../../../../../../shared/models/bhs';
 @Component({
   selector: 'at-bh',
   templateUrl: './bh.component.html',
-  styleUrls: ['./bh.component.css']
+  styleUrls: ['./bh.component.scss']
 })
 export class BhComponent implements OnInit {
 
